@@ -1,0 +1,49 @@
+.text-content {
+	color: #005daa;
+	margin-bottom: 120px;
+	
+	strong {
+		&.underline {
+			text-decoration: underline;
+		}
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	p {
+		margin-bottom: 20px;
+		line-height: 1.5;
+	}
+
+	h2 {
+		@include font-size-tracking(20, 0, 30);
+		color: #04b0f1;
+		margin-top: 45px;
+		margin-bottom: 17px;
+	}
+
+	address {
+		margin-bottom: 20px;
+	}
+
+	ol {
+		margin-bottom: 20px;
+
+		&.upper-alpha {
+			list-style: upper-alpha;
+		}
+
+		&.lower-alpha {
+			list-style: lower-alpha;
+		}
+
+		&.upper-roman {
+			list-style: upper-roman;
+		}
+		&.lower-roman {
+			list-style: lower-roman;
+		}
+	}
+}

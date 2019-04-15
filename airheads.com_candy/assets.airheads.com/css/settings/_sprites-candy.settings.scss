@@ -1,0 +1,508 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$nav-page-bars-name: 'nav-page-bars';
+$nav-page-bars-x: 0px;
+$nav-page-bars-y: 780px;
+$nav-page-bars-offset-x: 0px;
+$nav-page-bars-offset-y: -780px;
+$nav-page-bars-width: 125px;
+$nav-page-bars-height: 103px;
+$nav-page-bars-total-width: 1225px;
+$nav-page-bars-total-height: 1001px;
+$nav-page-bars-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-page-bars: (0px, 780px, 0px, -780px, 125px, 103px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-page-bars', );
+$nav-page-bites-name: 'nav-page-bites';
+$nav-page-bites-x: 1011px;
+$nav-page-bites-y: 118px;
+$nav-page-bites-offset-x: -1011px;
+$nav-page-bites-offset-y: -118px;
+$nav-page-bites-width: 93px;
+$nav-page-bites-height: 126px;
+$nav-page-bites-total-width: 1225px;
+$nav-page-bites-total-height: 1001px;
+$nav-page-bites-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-page-bites: (1011px, 118px, -1011px, -118px, 93px, 126px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-page-bites', );
+$nav-page-gum-name: 'nav-page-gum';
+$nav-page-gum-x: 1011px;
+$nav-page-gum-y: 248px;
+$nav-page-gum-offset-x: -1011px;
+$nav-page-gum-offset-y: -248px;
+$nav-page-gum-width: 118px;
+$nav-page-gum-height: 98px;
+$nav-page-gum-total-width: 1225px;
+$nav-page-gum-total-height: 1001px;
+$nav-page-gum-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-page-gum: (1011px, 248px, -1011px, -248px, 118px, 98px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-page-gum', );
+$nav-page-soft-filled-bites-name: 'nav-page-soft-filled-bites';
+$nav-page-soft-filled-bites-x: 912px;
+$nav-page-soft-filled-bites-y: 266px;
+$nav-page-soft-filled-bites-offset-x: -912px;
+$nav-page-soft-filled-bites-offset-y: -266px;
+$nav-page-soft-filled-bites-width: 94px;
+$nav-page-soft-filled-bites-height: 128px;
+$nav-page-soft-filled-bites-total-width: 1225px;
+$nav-page-soft-filled-bites-total-height: 1001px;
+$nav-page-soft-filled-bites-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-page-soft-filled-bites: (912px, 266px, -912px, -266px, 94px, 128px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-page-soft-filled-bites', );
+$nav-page-xtremes-bites-name: 'nav-page-xtremes-bites';
+$nav-page-xtremes-bites-x: 912px;
+$nav-page-xtremes-bites-y: 0px;
+$nav-page-xtremes-bites-offset-x: -912px;
+$nav-page-xtremes-bites-offset-y: 0px;
+$nav-page-xtremes-bites-width: 95px;
+$nav-page-xtremes-bites-height: 129px;
+$nav-page-xtremes-bites-total-width: 1225px;
+$nav-page-xtremes-bites-total-height: 1001px;
+$nav-page-xtremes-bites-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-page-xtremes-bites: (912px, 0px, -912px, 0px, 95px, 129px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-page-xtremes-bites', );
+$nav-page-xtremes-sourfuls-name: 'nav-page-xtremes-sourfuls';
+$nav-page-xtremes-sourfuls-x: 912px;
+$nav-page-xtremes-sourfuls-y: 133px;
+$nav-page-xtremes-sourfuls-offset-x: -912px;
+$nav-page-xtremes-sourfuls-offset-y: -133px;
+$nav-page-xtremes-sourfuls-width: 95px;
+$nav-page-xtremes-sourfuls-height: 129px;
+$nav-page-xtremes-sourfuls-total-width: 1225px;
+$nav-page-xtremes-sourfuls-total-height: 1001px;
+$nav-page-xtremes-sourfuls-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-page-xtremes-sourfuls: (912px, 133px, -912px, -133px, 95px, 129px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-page-xtremes-sourfuls', );
+$nav-page-xtremes-name: 'nav-page-xtremes';
+$nav-page-xtremes-x: 1011px;
+$nav-page-xtremes-y: 350px;
+$nav-page-xtremes-offset-x: -1011px;
+$nav-page-xtremes-offset-y: -350px;
+$nav-page-xtremes-width: 141px;
+$nav-page-xtremes-height: 33px;
+$nav-page-xtremes-total-width: 1225px;
+$nav-page-xtremes-total-height: 1001px;
+$nav-page-xtremes-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-page-xtremes: (1011px, 350px, -1011px, -350px, 141px, 33px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-page-xtremes', );
+$nav-slide-bars-blue-raspberry-active-name: 'nav-slide-bars-blue-raspberry-active';
+$nav-slide-bars-blue-raspberry-active-x: 436px;
+$nav-slide-bars-blue-raspberry-active-y: 946px;
+$nav-slide-bars-blue-raspberry-active-offset-x: -436px;
+$nav-slide-bars-blue-raspberry-active-offset-y: -946px;
+$nav-slide-bars-blue-raspberry-active-width: 214px;
+$nav-slide-bars-blue-raspberry-active-height: 55px;
+$nav-slide-bars-blue-raspberry-active-total-width: 1225px;
+$nav-slide-bars-blue-raspberry-active-total-height: 1001px;
+$nav-slide-bars-blue-raspberry-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-blue-raspberry-active: (436px, 946px, -436px, -946px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-blue-raspberry-active', );
+$nav-slide-bars-blue-raspberry-name: 'nav-slide-bars-blue-raspberry';
+$nav-slide-bars-blue-raspberry-x: 218px;
+$nav-slide-bars-blue-raspberry-y: 946px;
+$nav-slide-bars-blue-raspberry-offset-x: -218px;
+$nav-slide-bars-blue-raspberry-offset-y: -946px;
+$nav-slide-bars-blue-raspberry-width: 214px;
+$nav-slide-bars-blue-raspberry-height: 55px;
+$nav-slide-bars-blue-raspberry-total-width: 1225px;
+$nav-slide-bars-blue-raspberry-total-height: 1001px;
+$nav-slide-bars-blue-raspberry-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-blue-raspberry: (218px, 946px, -218px, -946px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-blue-raspberry', );
+$nav-slide-bars-cherry-active-name: 'nav-slide-bars-cherry-active';
+$nav-slide-bars-cherry-active-x: 0px;
+$nav-slide-bars-cherry-active-y: 946px;
+$nav-slide-bars-cherry-active-offset-x: 0px;
+$nav-slide-bars-cherry-active-offset-y: -946px;
+$nav-slide-bars-cherry-active-width: 214px;
+$nav-slide-bars-cherry-active-height: 55px;
+$nav-slide-bars-cherry-active-total-width: 1225px;
+$nav-slide-bars-cherry-active-total-height: 1001px;
+$nav-slide-bars-cherry-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-cherry-active: (0px, 946px, 0px, -946px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-cherry-active', );
+$nav-slide-bars-cherry-name: 'nav-slide-bars-cherry';
+$nav-slide-bars-cherry-x: 654px;
+$nav-slide-bars-cherry-y: 887px;
+$nav-slide-bars-cherry-offset-x: -654px;
+$nav-slide-bars-cherry-offset-y: -887px;
+$nav-slide-bars-cherry-width: 214px;
+$nav-slide-bars-cherry-height: 55px;
+$nav-slide-bars-cherry-total-width: 1225px;
+$nav-slide-bars-cherry-total-height: 1001px;
+$nav-slide-bars-cherry-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-cherry: (654px, 887px, -654px, -887px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-cherry', );
+$nav-slide-bars-grape-active-name: 'nav-slide-bars-grape-active';
+$nav-slide-bars-grape-active-x: 614px;
+$nav-slide-bars-grape-active-y: 582px;
+$nav-slide-bars-grape-active-offset-x: -614px;
+$nav-slide-bars-grape-active-offset-y: -582px;
+$nav-slide-bars-grape-active-width: 214px;
+$nav-slide-bars-grape-active-height: 55px;
+$nav-slide-bars-grape-active-total-width: 1225px;
+$nav-slide-bars-grape-active-total-height: 1001px;
+$nav-slide-bars-grape-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-grape-active: (614px, 582px, -614px, -582px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-grape-active', );
+$nav-slide-bars-grape-name: 'nav-slide-bars-grape';
+$nav-slide-bars-grape-x: 218px;
+$nav-slide-bars-grape-y: 887px;
+$nav-slide-bars-grape-offset-x: -218px;
+$nav-slide-bars-grape-offset-y: -887px;
+$nav-slide-bars-grape-width: 214px;
+$nav-slide-bars-grape-height: 55px;
+$nav-slide-bars-grape-total-width: 1225px;
+$nav-slide-bars-grape-total-height: 1001px;
+$nav-slide-bars-grape-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-grape: (218px, 887px, -218px, -887px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-grape', );
+$nav-slide-bars-green-apple-active-name: 'nav-slide-bars-green-apple-active';
+$nav-slide-bars-green-apple-active-x: 0px;
+$nav-slide-bars-green-apple-active-y: 887px;
+$nav-slide-bars-green-apple-active-offset-x: 0px;
+$nav-slide-bars-green-apple-active-offset-y: -887px;
+$nav-slide-bars-green-apple-active-width: 214px;
+$nav-slide-bars-green-apple-active-height: 55px;
+$nav-slide-bars-green-apple-active-total-width: 1225px;
+$nav-slide-bars-green-apple-active-total-height: 1001px;
+$nav-slide-bars-green-apple-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-green-apple-active: (0px, 887px, 0px, -887px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-green-apple-active', );
+$nav-slide-bars-green-apple-name: 'nav-slide-bars-green-apple';
+$nav-slide-bars-green-apple-x: 565px;
+$nav-slide-bars-green-apple-y: 780px;
+$nav-slide-bars-green-apple-offset-x: -565px;
+$nav-slide-bars-green-apple-offset-y: -780px;
+$nav-slide-bars-green-apple-width: 214px;
+$nav-slide-bars-green-apple-height: 55px;
+$nav-slide-bars-green-apple-total-width: 1225px;
+$nav-slide-bars-green-apple-total-height: 1001px;
+$nav-slide-bars-green-apple-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-green-apple: (565px, 780px, -565px, -780px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-green-apple', );
+$nav-slide-bars-orange-active-name: 'nav-slide-bars-orange-active';
+$nav-slide-bars-orange-active-x: 347px;
+$nav-slide-bars-orange-active-y: 780px;
+$nav-slide-bars-orange-active-offset-x: -347px;
+$nav-slide-bars-orange-active-offset-y: -780px;
+$nav-slide-bars-orange-active-width: 214px;
+$nav-slide-bars-orange-active-height: 55px;
+$nav-slide-bars-orange-active-total-width: 1225px;
+$nav-slide-bars-orange-active-total-height: 1001px;
+$nav-slide-bars-orange-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-orange-active: (347px, 780px, -347px, -780px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-orange-active', );
+$nav-slide-bars-orange-name: 'nav-slide-bars-orange';
+$nav-slide-bars-orange-x: 129px;
+$nav-slide-bars-orange-y: 780px;
+$nav-slide-bars-orange-offset-x: -129px;
+$nav-slide-bars-orange-offset-y: -780px;
+$nav-slide-bars-orange-width: 214px;
+$nav-slide-bars-orange-height: 55px;
+$nav-slide-bars-orange-total-width: 1225px;
+$nav-slide-bars-orange-total-height: 1001px;
+$nav-slide-bars-orange-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-orange: (129px, 780px, -129px, -780px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-orange', );
+$nav-slide-bars-strawberry-active-name: 'nav-slide-bars-strawberry-active';
+$nav-slide-bars-strawberry-active-x: 654px;
+$nav-slide-bars-strawberry-active-y: 946px;
+$nav-slide-bars-strawberry-active-offset-x: -654px;
+$nav-slide-bars-strawberry-active-offset-y: -946px;
+$nav-slide-bars-strawberry-active-width: 214px;
+$nav-slide-bars-strawberry-active-height: 55px;
+$nav-slide-bars-strawberry-active-total-width: 1225px;
+$nav-slide-bars-strawberry-active-total-height: 1001px;
+$nav-slide-bars-strawberry-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-strawberry-active: (654px, 946px, -654px, -946px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-strawberry-active', );
+$nav-slide-bars-strawberry-name: 'nav-slide-bars-strawberry';
+$nav-slide-bars-strawberry-x: 436px;
+$nav-slide-bars-strawberry-y: 887px;
+$nav-slide-bars-strawberry-offset-x: -436px;
+$nav-slide-bars-strawberry-offset-y: -887px;
+$nav-slide-bars-strawberry-width: 214px;
+$nav-slide-bars-strawberry-height: 55px;
+$nav-slide-bars-strawberry-total-width: 1225px;
+$nav-slide-bars-strawberry-total-height: 1001px;
+$nav-slide-bars-strawberry-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-strawberry: (436px, 887px, -436px, -887px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-strawberry', );
+$nav-slide-bars-watermelon-active-name: 'nav-slide-bars-watermelon-active';
+$nav-slide-bars-watermelon-active-x: 1011px;
+$nav-slide-bars-watermelon-active-y: 59px;
+$nav-slide-bars-watermelon-active-offset-x: -1011px;
+$nav-slide-bars-watermelon-active-offset-y: -59px;
+$nav-slide-bars-watermelon-active-width: 214px;
+$nav-slide-bars-watermelon-active-height: 55px;
+$nav-slide-bars-watermelon-active-total-width: 1225px;
+$nav-slide-bars-watermelon-active-total-height: 1001px;
+$nav-slide-bars-watermelon-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-watermelon-active: (1011px, 59px, -1011px, -59px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-watermelon-active', );
+$nav-slide-bars-watermelon-name: 'nav-slide-bars-watermelon';
+$nav-slide-bars-watermelon-x: 1011px;
+$nav-slide-bars-watermelon-y: 0px;
+$nav-slide-bars-watermelon-offset-x: -1011px;
+$nav-slide-bars-watermelon-offset-y: 0px;
+$nav-slide-bars-watermelon-width: 214px;
+$nav-slide-bars-watermelon-height: 55px;
+$nav-slide-bars-watermelon-total-width: 1225px;
+$nav-slide-bars-watermelon-total-height: 1001px;
+$nav-slide-bars-watermelon-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-watermelon: (1011px, 0px, -1011px, 0px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-watermelon', );
+$nav-slide-bars-white-mystery-active-name: 'nav-slide-bars-white-mystery-active';
+$nav-slide-bars-white-mystery-active-x: 614px;
+$nav-slide-bars-white-mystery-active-y: 648px;
+$nav-slide-bars-white-mystery-active-offset-x: -614px;
+$nav-slide-bars-white-mystery-active-offset-y: -648px;
+$nav-slide-bars-white-mystery-active-width: 214px;
+$nav-slide-bars-white-mystery-active-height: 55px;
+$nav-slide-bars-white-mystery-active-total-width: 1225px;
+$nav-slide-bars-white-mystery-active-total-height: 1001px;
+$nav-slide-bars-white-mystery-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-white-mystery-active: (614px, 648px, -614px, -648px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-white-mystery-active', );
+$nav-slide-bars-white-mystery-name: 'nav-slide-bars-white-mystery';
+$nav-slide-bars-white-mystery-x: 614px;
+$nav-slide-bars-white-mystery-y: 714px;
+$nav-slide-bars-white-mystery-offset-x: -614px;
+$nav-slide-bars-white-mystery-offset-y: -714px;
+$nav-slide-bars-white-mystery-width: 214px;
+$nav-slide-bars-white-mystery-height: 55px;
+$nav-slide-bars-white-mystery-total-width: 1225px;
+$nav-slide-bars-white-mystery-total-height: 1001px;
+$nav-slide-bars-white-mystery-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bars-white-mystery: (614px, 714px, -614px, -714px, 214px, 55px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bars-white-mystery', );
+$nav-slide-bites-berry-active-name: 'nav-slide-bites-berry-active';
+$nav-slide-bites-berry-active-x: 616px;
+$nav-slide-bites-berry-active-y: 399px;
+$nav-slide-bites-berry-active-offset-x: -616px;
+$nav-slide-bites-berry-active-offset-y: -399px;
+$nav-slide-bites-berry-active-width: 292px;
+$nav-slide-bites-berry-active-height: 129px;
+$nav-slide-bites-berry-active-total-width: 1225px;
+$nav-slide-bites-berry-active-total-height: 1001px;
+$nav-slide-bites-berry-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bites-berry-active: (616px, 399px, -616px, -399px, 292px, 129px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bites-berry-active', );
+$nav-slide-bites-berry-name: 'nav-slide-bites-berry';
+$nav-slide-bites-berry-x: 616px;
+$nav-slide-bites-berry-y: 0px;
+$nav-slide-bites-berry-offset-x: -616px;
+$nav-slide-bites-berry-offset-y: 0px;
+$nav-slide-bites-berry-width: 292px;
+$nav-slide-bites-berry-height: 129px;
+$nav-slide-bites-berry-total-width: 1225px;
+$nav-slide-bites-berry-total-height: 1001px;
+$nav-slide-bites-berry-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bites-berry: (616px, 0px, -616px, 0px, 292px, 129px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bites-berry', );
+$nav-slide-bites-fruit-active-name: 'nav-slide-bites-fruit-active';
+$nav-slide-bites-fruit-active-x: 616px;
+$nav-slide-bites-fruit-active-y: 133px;
+$nav-slide-bites-fruit-active-offset-x: -616px;
+$nav-slide-bites-fruit-active-offset-y: -133px;
+$nav-slide-bites-fruit-active-width: 292px;
+$nav-slide-bites-fruit-active-height: 129px;
+$nav-slide-bites-fruit-active-total-width: 1225px;
+$nav-slide-bites-fruit-active-total-height: 1001px;
+$nav-slide-bites-fruit-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bites-fruit-active: (616px, 133px, -616px, -133px, 292px, 129px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bites-fruit-active', );
+$nav-slide-bites-fruit-name: 'nav-slide-bites-fruit';
+$nav-slide-bites-fruit-x: 616px;
+$nav-slide-bites-fruit-y: 266px;
+$nav-slide-bites-fruit-offset-x: -616px;
+$nav-slide-bites-fruit-offset-y: -266px;
+$nav-slide-bites-fruit-width: 292px;
+$nav-slide-bites-fruit-height: 129px;
+$nav-slide-bites-fruit-total-width: 1225px;
+$nav-slide-bites-fruit-total-height: 1001px;
+$nav-slide-bites-fruit-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-bites-fruit: (616px, 266px, -616px, -266px, 292px, 129px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-bites-fruit', );
+$nav-slide-gum-blue-raspberry-active-name: 'nav-slide-gum-blue-raspberry-active';
+$nav-slide-gum-blue-raspberry-active-x: 308px;
+$nav-slide-gum-blue-raspberry-active-y: 0px;
+$nav-slide-gum-blue-raspberry-active-offset-x: -308px;
+$nav-slide-gum-blue-raspberry-active-offset-y: 0px;
+$nav-slide-gum-blue-raspberry-active-width: 304px;
+$nav-slide-gum-blue-raspberry-active-height: 190px;
+$nav-slide-gum-blue-raspberry-active-total-width: 1225px;
+$nav-slide-gum-blue-raspberry-active-total-height: 1001px;
+$nav-slide-gum-blue-raspberry-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-gum-blue-raspberry-active: (308px, 0px, -308px, 0px, 304px, 190px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-gum-blue-raspberry-active', );
+$nav-slide-gum-blue-raspberry-name: 'nav-slide-gum-blue-raspberry';
+$nav-slide-gum-blue-raspberry-x: 0px;
+$nav-slide-gum-blue-raspberry-y: 388px;
+$nav-slide-gum-blue-raspberry-offset-x: 0px;
+$nav-slide-gum-blue-raspberry-offset-y: -388px;
+$nav-slide-gum-blue-raspberry-width: 304px;
+$nav-slide-gum-blue-raspberry-height: 190px;
+$nav-slide-gum-blue-raspberry-total-width: 1225px;
+$nav-slide-gum-blue-raspberry-total-height: 1001px;
+$nav-slide-gum-blue-raspberry-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-gum-blue-raspberry: (0px, 388px, 0px, -388px, 304px, 190px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-gum-blue-raspberry', );
+$nav-slide-gum-cherry-active-name: 'nav-slide-gum-cherry-active';
+$nav-slide-gum-cherry-active-x: 308px;
+$nav-slide-gum-cherry-active-y: 388px;
+$nav-slide-gum-cherry-active-offset-x: -308px;
+$nav-slide-gum-cherry-active-offset-y: -388px;
+$nav-slide-gum-cherry-active-width: 304px;
+$nav-slide-gum-cherry-active-height: 190px;
+$nav-slide-gum-cherry-active-total-width: 1225px;
+$nav-slide-gum-cherry-active-total-height: 1001px;
+$nav-slide-gum-cherry-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-gum-cherry-active: (308px, 388px, -308px, -388px, 304px, 190px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-gum-cherry-active', );
+$nav-slide-gum-cherry-name: 'nav-slide-gum-cherry';
+$nav-slide-gum-cherry-x: 0px;
+$nav-slide-gum-cherry-y: 0px;
+$nav-slide-gum-cherry-offset-x: 0px;
+$nav-slide-gum-cherry-offset-y: 0px;
+$nav-slide-gum-cherry-width: 304px;
+$nav-slide-gum-cherry-height: 190px;
+$nav-slide-gum-cherry-total-width: 1225px;
+$nav-slide-gum-cherry-total-height: 1001px;
+$nav-slide-gum-cherry-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-gum-cherry: (0px, 0px, 0px, 0px, 304px, 190px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-gum-cherry', );
+$nav-slide-gum-watermelon-active-name: 'nav-slide-gum-watermelon-active';
+$nav-slide-gum-watermelon-active-x: 308px;
+$nav-slide-gum-watermelon-active-y: 194px;
+$nav-slide-gum-watermelon-active-offset-x: -308px;
+$nav-slide-gum-watermelon-active-offset-y: -194px;
+$nav-slide-gum-watermelon-active-width: 304px;
+$nav-slide-gum-watermelon-active-height: 190px;
+$nav-slide-gum-watermelon-active-total-width: 1225px;
+$nav-slide-gum-watermelon-active-total-height: 1001px;
+$nav-slide-gum-watermelon-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-gum-watermelon-active: (308px, 194px, -308px, -194px, 304px, 190px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-gum-watermelon-active', );
+$nav-slide-gum-watermelon-name: 'nav-slide-gum-watermelon';
+$nav-slide-gum-watermelon-x: 0px;
+$nav-slide-gum-watermelon-y: 194px;
+$nav-slide-gum-watermelon-offset-x: 0px;
+$nav-slide-gum-watermelon-offset-y: -194px;
+$nav-slide-gum-watermelon-width: 304px;
+$nav-slide-gum-watermelon-height: 190px;
+$nav-slide-gum-watermelon-total-width: 1225px;
+$nav-slide-gum-watermelon-total-height: 1001px;
+$nav-slide-gum-watermelon-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-gum-watermelon: (0px, 194px, 0px, -194px, 304px, 190px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-gum-watermelon', );
+$nav-slide-xtremes-bluest-raspberry-active-name: 'nav-slide-xtremes-bluest-raspberry-active';
+$nav-slide-xtremes-bluest-raspberry-active-x: 307px;
+$nav-slide-xtremes-bluest-raspberry-active-y: 582px;
+$nav-slide-xtremes-bluest-raspberry-active-offset-x: -307px;
+$nav-slide-xtremes-bluest-raspberry-active-offset-y: -582px;
+$nav-slide-xtremes-bluest-raspberry-active-width: 303px;
+$nav-slide-xtremes-bluest-raspberry-active-height: 62px;
+$nav-slide-xtremes-bluest-raspberry-active-total-width: 1225px;
+$nav-slide-xtremes-bluest-raspberry-active-total-height: 1001px;
+$nav-slide-xtremes-bluest-raspberry-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-xtremes-bluest-raspberry-active: (307px, 582px, -307px, -582px, 303px, 62px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-xtremes-bluest-raspberry-active', );
+$nav-slide-xtremes-bluest-raspberry-name: 'nav-slide-xtremes-bluest-raspberry';
+$nav-slide-xtremes-bluest-raspberry-x: 0px;
+$nav-slide-xtremes-bluest-raspberry-y: 648px;
+$nav-slide-xtremes-bluest-raspberry-offset-x: 0px;
+$nav-slide-xtremes-bluest-raspberry-offset-y: -648px;
+$nav-slide-xtremes-bluest-raspberry-width: 303px;
+$nav-slide-xtremes-bluest-raspberry-height: 62px;
+$nav-slide-xtremes-bluest-raspberry-total-width: 1225px;
+$nav-slide-xtremes-bluest-raspberry-total-height: 1001px;
+$nav-slide-xtremes-bluest-raspberry-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-xtremes-bluest-raspberry: (0px, 648px, 0px, -648px, 303px, 62px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-xtremes-bluest-raspberry', );
+$nav-slide-xtremes-rainbow-berry-active-name: 'nav-slide-xtremes-rainbow-berry-active';
+$nav-slide-xtremes-rainbow-berry-active-x: 307px;
+$nav-slide-xtremes-rainbow-berry-active-y: 648px;
+$nav-slide-xtremes-rainbow-berry-active-offset-x: -307px;
+$nav-slide-xtremes-rainbow-berry-active-offset-y: -648px;
+$nav-slide-xtremes-rainbow-berry-active-width: 303px;
+$nav-slide-xtremes-rainbow-berry-active-height: 62px;
+$nav-slide-xtremes-rainbow-berry-active-total-width: 1225px;
+$nav-slide-xtremes-rainbow-berry-active-total-height: 1001px;
+$nav-slide-xtremes-rainbow-berry-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-xtremes-rainbow-berry-active: (307px, 648px, -307px, -648px, 303px, 62px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-xtremes-rainbow-berry-active', );
+$nav-slide-xtremes-rainbow-berry-name: 'nav-slide-xtremes-rainbow-berry';
+$nav-slide-xtremes-rainbow-berry-x: 0px;
+$nav-slide-xtremes-rainbow-berry-y: 714px;
+$nav-slide-xtremes-rainbow-berry-offset-x: 0px;
+$nav-slide-xtremes-rainbow-berry-offset-y: -714px;
+$nav-slide-xtremes-rainbow-berry-width: 303px;
+$nav-slide-xtremes-rainbow-berry-height: 62px;
+$nav-slide-xtremes-rainbow-berry-total-width: 1225px;
+$nav-slide-xtremes-rainbow-berry-total-height: 1001px;
+$nav-slide-xtremes-rainbow-berry-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-xtremes-rainbow-berry: (0px, 714px, 0px, -714px, 303px, 62px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-xtremes-rainbow-berry', );
+$nav-slide-xtremes-wacky-watermelon-active-name: 'nav-slide-xtremes-wacky-watermelon-active';
+$nav-slide-xtremes-wacky-watermelon-active-x: 0px;
+$nav-slide-xtremes-wacky-watermelon-active-y: 582px;
+$nav-slide-xtremes-wacky-watermelon-active-offset-x: 0px;
+$nav-slide-xtremes-wacky-watermelon-active-offset-y: -582px;
+$nav-slide-xtremes-wacky-watermelon-active-width: 303px;
+$nav-slide-xtremes-wacky-watermelon-active-height: 62px;
+$nav-slide-xtremes-wacky-watermelon-active-total-width: 1225px;
+$nav-slide-xtremes-wacky-watermelon-active-total-height: 1001px;
+$nav-slide-xtremes-wacky-watermelon-active-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-xtremes-wacky-watermelon-active: (0px, 582px, 0px, -582px, 303px, 62px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-xtremes-wacky-watermelon-active', );
+$nav-slide-xtremes-wacky-watermelon-name: 'nav-slide-xtremes-wacky-watermelon';
+$nav-slide-xtremes-wacky-watermelon-x: 307px;
+$nav-slide-xtremes-wacky-watermelon-y: 714px;
+$nav-slide-xtremes-wacky-watermelon-offset-x: -307px;
+$nav-slide-xtremes-wacky-watermelon-offset-y: -714px;
+$nav-slide-xtremes-wacky-watermelon-width: 303px;
+$nav-slide-xtremes-wacky-watermelon-height: 62px;
+$nav-slide-xtremes-wacky-watermelon-total-width: 1225px;
+$nav-slide-xtremes-wacky-watermelon-total-height: 1001px;
+$nav-slide-xtremes-wacky-watermelon-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$nav-slide-xtremes-wacky-watermelon: (307px, 714px, -307px, -714px, 303px, 62px, 1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', 'nav-slide-xtremes-wacky-watermelon', );
+$spritesheet-width: 1225px;
+$spritesheet-height: 1001px;
+$spritesheet-image: '//assets.airheads.com/img/sprites-candy.jpg';
+$spritesheet-sprites: ($nav-page-bars, $nav-page-bites, $nav-page-gum, $nav-page-soft-filled-bites, $nav-page-xtremes-bites, $nav-page-xtremes-sourfuls, $nav-page-xtremes, $nav-slide-bars-blue-raspberry-active, $nav-slide-bars-blue-raspberry, $nav-slide-bars-cherry-active, $nav-slide-bars-cherry, $nav-slide-bars-grape-active, $nav-slide-bars-grape, $nav-slide-bars-green-apple-active, $nav-slide-bars-green-apple, $nav-slide-bars-orange-active, $nav-slide-bars-orange, $nav-slide-bars-strawberry-active, $nav-slide-bars-strawberry, $nav-slide-bars-watermelon-active, $nav-slide-bars-watermelon, $nav-slide-bars-white-mystery-active, $nav-slide-bars-white-mystery, $nav-slide-bites-berry-active, $nav-slide-bites-berry, $nav-slide-bites-fruit-active, $nav-slide-bites-fruit, $nav-slide-gum-blue-raspberry-active, $nav-slide-gum-blue-raspberry, $nav-slide-gum-cherry-active, $nav-slide-gum-cherry, $nav-slide-gum-watermelon-active, $nav-slide-gum-watermelon, $nav-slide-xtremes-bluest-raspberry-active, $nav-slide-xtremes-bluest-raspberry, $nav-slide-xtremes-rainbow-berry-active, $nav-slide-xtremes-rainbow-berry, $nav-slide-xtremes-wacky-watermelon-active, $nav-slide-xtremes-wacky-watermelon, );
+$spritesheet: (1225px, 1001px, '//assets.airheads.com/img/sprites-candy.jpg', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

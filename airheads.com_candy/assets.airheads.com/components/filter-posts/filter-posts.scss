@@ -1,0 +1,79 @@
+.filter-posts {
+	display: none;
+	max-width: 1120px;
+	margin: 55px auto 0;
+
+	// only show filter if on crafts-page
+	.crafts-page & {
+		display: block;
+	}
+
+	@include breakpoint(small) {
+		margin: 25px auto;
+		text-align: center;
+	}
+}
+
+.filter-posts_callout-text {
+	@include icon(arrow-curvy, true);
+	@include font-size-tracking(44, 0, 48);
+	color: #005ba8;
+	margin-bottom: 27px;
+
+	@include breakpoint(small) {
+		line-height: 0.55;
+	}
+
+	&:after {
+		position: relative;
+		color: #005ba8;
+		font-size: 30px;
+		display: inline-block;
+		left: 10px;
+		top: 6px;
+		transform: rotate(-360deg) scaleX(-1);
+
+		@include breakpoint(small) {
+			display: none;
+		}
+	}
+}
+
+.filter-posts_tags {
+	@include breakpoint(small) {
+		overflow: hidden;
+		text-align: center;
+	}
+}
+
+.filter-posts_tag {
+	@include font-size-tracking(18, -30, 18);
+	border: 3px solid $color-blue-light;
+	border-radius: 10px;
+	background-color: $color-blue-light;
+	color: $color-white;
+	display: inline-block;
+	margin: 0 8px 8px 0;
+	padding: 17px 15px 15px;
+
+	@include breakpoint(medium-only) {
+		margin: 0 6px 6px 0;
+	}
+
+	@include breakpoint(small) {
+		margin-bottom: 12px;
+		float: left;
+		width: 49%;
+		margin: 0 0 2%;
+
+		&:nth-child(odd) {
+			margin-right: 2%;
+		}
+	}
+
+	&--active,
+	&:hover {
+		color: $color-blue-light;
+		background-color: $color-white;
+	}
+}

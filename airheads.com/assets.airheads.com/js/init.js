@@ -51,4 +51,7 @@
         Module.initialize();
         window.airheads.modules[Module.id] = Module;
     }
+
+    // autoplay hero video
+    document.querySelector('.hero_inner video').play();
 })(jQuery, window);

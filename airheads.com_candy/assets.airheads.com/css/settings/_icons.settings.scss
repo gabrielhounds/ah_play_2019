@@ -1,0 +1,86 @@
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: 400;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+// Please update this map if you add new icons - add the class and content value after the existing ones
+// NEW: Icon styles are happening dynamically! No need to update two things -
+// just add the unicode point and class name (minus the "icon") of any new icons
+// to this map, and the styles will automatically be created for it.
+// This gives us some flexibility and means we can do things like reorder,
+// rename, or dynamically access any icon as needed. Plus it's easy to read.
+
+@function unicode($str){
+  @return unquote("\"") + $str + unquote("\"");
+}
+
+$icons: (
+  arrow-curvy: \e908,
+  caret-down: \e902,
+  caret-left: \e903,
+  caret-left-thin: \e90d,
+  caret-right: \e900,
+  caret-right-thin: \e90c,
+  caret-up: \e905,
+  close: \e90b,
+  facebook: \e901,
+  instagram: \e906,
+  label: \e90e,
+  pinterest: \e907,
+  play: \e909,
+  twitter: \e904,
+  youtube: \e90a
+);
+
+// This loop generates css classes:
+// Just keep the map current please!
+@each $name, $content in $icons {
+	.icon-#{$name}:before {
+		content: unicode($content);
+	}
+}
+
+// @function get-icon --- returns the unicode point mapped to the given icon name/class, from the $icons map ^
+// which might be useful since you can't do @extend .whatever-icon inside a media query
+// Usage:
+// .special-icon-situation:after { font-family: 'icomoon'; content: get-icon(arrow-down); }
+@function get-icon($name) {
+	@if map-has-key($icons, $name) {
+    	$icon-code: map_get($icons, $name);
+    	@return unicode($icon-code);
+    } @else {
+		@warn "No icon stored under that name - make sure to update the $icons map in icons.scss whenever you add a new icon! \a
+	Current icons: \a
+	#{map_keys($icons)} \a
+	";
+	}
+}
+
+// A shorter way of doing the same - use this if you don't want to explicitly
+// give your element a "whatever-icon" class in the markup
+@mixin icon($name, $after: false) {
+  $psuedo: "before";
+  $dir: false;
+
+  @if $after == true {
+    $psuedo: "after";
+  }
+
+  &:#{$psuedo} {
+    display: block;
+    font-family: 'icomoon';
+    content: get-icon($name);
+    font-style: normal;
+    font-weight: normal;
+
+    @if $dir {
+      transform: rotate($dir);
+    }
+  }
+}

@@ -1,3 +1,9 @@
+// body.crafts-page {
+// 	& .filter-posts_callout-text {
+// 		display: none;
+// 	}
+// }
+
 .filter-posts {
 	display: none;
 	max-width: 1120px;
@@ -17,16 +23,12 @@
 .filter-posts_callout-text {
 	@include icon(arrow-curvy, true);
 	@include font-size-tracking(44, 0, 48);
-	color: #005ba8;
+	color: $color-blue;
 	margin-bottom: 27px;
-
-	@include breakpoint(small) {
-		line-height: 0.55;
-	}
 
 	&:after {
 		position: relative;
-		color: #005ba8;
+		color: $color-blue;
 		font-size: 30px;
 		display: inline-block;
 		left: 10px;
@@ -49,12 +51,13 @@
 .filter-posts_tag {
 	@include font-size-tracking(18, -30, 18);
 	border: 3px solid $color-blue-light;
-	border-radius: 10px;
+	border-radius: 999px;
 	background-color: $color-blue-light;
 	color: $color-white;
 	display: inline-block;
 	margin: 0 8px 8px 0;
 	padding: 17px 15px 15px;
+	font-weight: bold;
 
 	@include breakpoint(medium-only) {
 		margin: 0 6px 6px 0;

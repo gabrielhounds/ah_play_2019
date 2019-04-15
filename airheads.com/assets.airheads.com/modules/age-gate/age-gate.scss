@@ -1,3 +1,8 @@
+body.contact-page {
+	background-color: $color-blue;
+	margin-top: 160px;
+}
+
 .age-gate {
     // display: none;
     // width:90%;
@@ -21,7 +26,7 @@
     @include breakpoint(small) {
         // min-height: 470px;
         // padding-top: 0;
-        // margin-top: -50px;
+        // margin-top: 80px;
     }
 
     &_inner {

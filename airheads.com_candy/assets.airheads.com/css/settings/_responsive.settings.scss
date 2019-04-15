@@ -1,0 +1,84 @@
+// Breakpoints
+
+// Set your desired breakpoints here. Ideally, breakpoints should be set to
+// where they make sense in the design, not targeted to specific devices.
+
+@mixin breakpoint($breakpoint, $media: screen) {
+	@if $breakpoint == nano {
+		@media only #{$media} and (max-width: $nano-breakpoint) {
+			//only prevents ie6-8 from using stylesheet
+			@content;
+		}
+	} @else if $breakpoint == micro {
+		@media only #{$media} and (max-width: $micro-breakpoint) {
+			//only prevents ie6-8 from using stylesheet
+			@content;
+		}
+	} @else if $breakpoint == small {
+		@media only #{$media} and (max-width: $small-breakpoint) {
+			//only prevents ie6-8 from using stylesheet
+			@content;
+		}
+	} @else if $breakpoint == medium {
+		@media only #{$media} and (max-width: $medium-breakpoint) {
+			@content;
+		}
+	} @else if $breakpoint == medium-and-below {
+		@media only #{$media} and (min-width: 0) and (max-width: $medium-breakpoint) {
+			@content;
+		}
+	} @else if $breakpoint == medium-only {
+		@media only #{$media} and (min-width: $small-breakpoint + 1) and (max-width: $medium-breakpoint) {
+			@content;
+		}
+	} @else if $breakpoint == medium-and-above {
+		@media only #{$media} and (min-width: $small-breakpoint + 1) {
+			@content;
+		}
+	} @else if $breakpoint == large {
+		@media only #{$media} and (max-width: $large-breakpoint) {
+			@content;
+		}
+	} @else if $breakpoint == large-and-above {
+		@media only #{$media} and (min-width: $medium-breakpoint + 1) {
+			@content;
+		}
+	} @else if $breakpoint == large-only {
+		@media only #{$media} and (min-width: $medium-breakpoint + 1) {
+			@content;
+		}
+		//   } @else if $breakpoint == xlarge {
+		//     @media only #{$media} and (max-width: $breakpoint) {
+		//       @content;
+		//     }
+		//   } @else if $breakpoint == xlarge-and-above {
+		//     @media only #{$media} and (min-width: $breakpoint + 1) {
+		//       @content;
+		//     }
+	} @else {
+		@media only #{$media} and (max-width: $breakpoint) {
+			@content;
+		}
+	}
+}
+
+// hidpi: same concept as "responsive", except that this is focusing on
+// HiDPI (a.k.a. retina) displays.
+@mixin hidpi($media: all) {
+	@media only #{$media} and (min--moz-device-pixel-ratio: 1.5),
+    only #{$media} and (-o-min-device-pixel-ratio: 3/2),
+    only #{$media} and (-webkit-min-device-pixel-ratio: 1.5),
+    only #{$media} and (min-device-pixel-ratio: 1.5),
+    only #{$media} and (min-resolution: 144dpi),
+    only #{$media} and (min-resolution: 1.5dppx) {
+		@content;
+	}
+}
+
+// and just because the term "retina" is so widely used, we'll create
+// a mixin that uses that as an alias
+@mixin retina($media: all) {
+	@include hidpi($media) {
+		@content;
+	}
+}

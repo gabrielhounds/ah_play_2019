@@ -133,3 +133,8 @@ img {
 		transform: rotate(2deg);
 	}
 }
+
+// hide the tumblr app button
+.app-cta-button {
+	display: none !important;
+}

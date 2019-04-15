@@ -29,18 +29,20 @@ $background-min-width: 1500px;
 
 	&--left {
 		width: 246px;
-		height: 1574px;
+		// height: 1574px;
 		top: 91px;
 		left: 0;
 		// 1px to prevent rounding bug
 		background: url('//assets.airheads.com/img/background-left-rail.jpg') 1px 0 repeat-y;
+		height: 99999px;
 	}
 
 	&--right {
-		width: 188px;
-		height: 1731px;
+		width: 186px;
+		// height: 1682px;
 		top: 0;
 		right: 0;
 		background: url('//assets.airheads.com/img/background-right-rail.jpg') -1px 0 repeat-y;
+		height: 99999px;
 	}
 }

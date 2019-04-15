@@ -618,6 +618,10 @@ img {
     }
 }
 
+.app-cta-button {
+    display: none !important
+}
+
 .btn {
     font-size: 22px;
     letter-spacing: 0px;
@@ -720,7 +724,7 @@ img {
     font-size: 44px;
     letter-spacing: 0px;
     line-height: 1.09091;
-    color: #005ba8;
+    color: #000f60;
     margin-bottom: 27px
 }
 
@@ -732,15 +736,9 @@ img {
     font-weight: normal
 }
 
-@media only screen and (max-width: 960px) {
-    .filter-posts_callout-text {
-        line-height: 0.55
-    }
-}
-
 .filter-posts_callout-text:after {
     position: relative;
-    color: #005ba8;
+    color: #000f60;
     font-size: 30px;
     display: inline-block;
     left: 10px;
@@ -766,12 +764,13 @@ img {
     letter-spacing: -.54px;
     line-height: 1;
     border: 3px solid #00adff;
-    border-radius: 10px;
+    border-radius: 999px;
     background-color: #00adff;
     color: #fff;
     display: inline-block;
     margin: 0 8px 8px 0;
-    padding: 17px 15px 15px
+    padding: 17px 15px 15px;
+    font-weight: bold
 }
 
 @media only screen and (min-width: 961px) and (max-width: 1024px) {
@@ -965,6 +964,11 @@ img {
     width: 100%
 }
 
+body.contact-page {
+    background-color: #000f60;
+    margin-top: 160px
+}
+
 .age-gate {
     background-color: #000f60;
     margin-top: -80px
@@ -1151,18 +1155,18 @@ img {
 
 .background-rail--left {
     width: 246px;
-    height: 1574px;
     top: 91px;
     left: 0;
-    background: url("//assets.airheads.com/img/background-left-rail.jpg") 1px 0 repeat-y
+    background: url("//assets.airheads.com/img/background-left-rail.jpg") 1px 0 repeat-y;
+    height: 99999px
 }
 
 .background-rail--right {
-    width: 188px;
-    height: 1731px;
+    width: 186px;
     top: 0;
     right: 0;
-    background: url("//assets.airheads.com/img/background-right-rail.jpg") -1px 0 repeat-y
+    background: url("//assets.airheads.com/img/background-right-rail.jpg") -1px 0 repeat-y;
+    height: 99999px
 }
 
 .global-footer {
@@ -1195,8 +1199,10 @@ img {
 .global-footer_links-group {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-    justify-content: space-around
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    align-items: center
 }
 
 .global-footer_social {
@@ -1698,11 +1704,13 @@ img {
 
 .iframe iframe {
     width: 100%;
+    min-width: 650px;
     min-height: 1000px;
     background-image: url("//assets.airheads.com/img/spinner.gif");
     background-repeat: no-repeat;
     background-position: 50% 80px;
-    background-size: 170px 170px
+    background-size: 170px 170px;
+    overflow: scroll
 }
 
 #product-locator {
