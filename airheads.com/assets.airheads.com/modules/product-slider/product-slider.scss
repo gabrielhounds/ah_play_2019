@@ -1,0 +1,496 @@
+@-webkit-keyframes thumb {
+  0% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(0.9); }
+  100% { -webkit-transform: scale(1); }
+}
+
+.product-slider {
+  .slick-arrow {
+    height: 40px;
+    opacity: 0.5;
+    width: 40px;
+
+    &:before { font-size: 40px;  }
+  }
+}
+
+.product-slider_slides {
+  display: none;
+}
+
+.product-slider_type {
+  @include hide-text();
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  height: 33px;
+  margin-bottom: 1%;
+  text-align: center;
+  width: 100px;
+
+  &--original { background-image: url('//assets.airheads.com/img/candy/type-original.svg'); }
+  &--airheads { background-image: url('//assets.airheads.com/img/candy/type-airheads.svg'); }
+}
+
+.product-slider_product-title {
+  @include font-size-tracking(38, 10, 42);
+  margin-bottom: percentage(44/960);
+  text-shadow: -2px 2px 0 rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+
+.product-slider_product-description {
+  @include font-size-tracking(20, 0, 28);
+  margin-bottom: 9%;
+}
+
+.product-slider_btn {
+  @include font-size-tracking(20, 0, 30);
+  border: 3px solid white;
+  border-radius: 9999px;
+  padding: 3% 2% 2%;
+
+  .product-slider_slide--soft-filled-bites & { background-color: #f0364d; }
+  .product-slider_slide--xtremes-bites & { background-color: #92D943; }
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: white !important;
+    color: #007bc3;
+  }
+
+  &:focus { outline: none; }
+}
+
+@include breakpoint(medium-only) {
+  .product-slider {
+    .slick-arrow {
+      height: 75px;
+      width: 75px;
+
+      &:before { font-size: 75px;  }
+    }
+  }
+
+  .product-slider_content {
+    padding: 5% 15%;
+  }
+
+  .product-slider_type {
+    height: 45px;
+    width: 130px;
+  }
+
+  .product-slider_product-title {
+    @include font-size-tracking(53, 10, 58);
+  }
+
+  .product-slider_product-description {
+    @include font-size-tracking(25, 0, 32);
+  }
+
+  .product-slider_btn {
+    @include font-size-tracking(31, 0, 40);
+    border-radius: 9999px;
+    padding: 18px 28px;
+  }
+}
+
+@include breakpoint(medium-and-below) {
+  .product-slider .slick-dots {
+    display: none !important; // !important needed to override slick's inline styles
+  }
+
+  .product-slider {
+    color: #fff;
+    margin-bottom: 6%;
+
+    &--bars .product-slider_slide--intro { background-color: #005dab; }
+    &--bites .product-slider_slide--intro { background-color: #008be7; }
+	&--soft-filled-bites { background-color: #ef364d; }
+	&--gum { background-color: #eb516b; }
+    &--xtremes .product-slider_slide--intro { background-color: $color-green-light; }
+    &--xtremes-bites { background-color: #92d943; }
+    &--xtremes-sourfuls { background-color: $color-green-light}
+  }
+
+  // slide themes
+  .product-slider_slide {
+    &--bars-blue-raspberry { @include product-slider-theme(transparent, #a5eeff, #fff, #0083bf); }
+    &--bars-watermelon { @include product-slider-theme(transparent, #69eba9, #90edbe, #008446); }
+    &--bars-white-mystery { @include product-slider-theme(transparent, #fff, #597198, #a7bad8); }
+    &--bars-cherry { @include product-slider-theme(transparent, #ffcfcf, #fddcdc, #d91e3d); }
+    &--bars-orange { @include product-slider-theme(transparent, #ffdca3, #fff0d9, #f37021); }
+    &--bars-strawberry { @include product-slider-theme(transparent, #ffafc4, #fddcdc, #ff3d7a); }
+    &--bars-green-apple { @include product-slider-theme(transparent, #c6fabe, #2c881e, #8fc73e); }
+    &--bars-grape { @include product-slider-theme(transparent, #b999d9, #d7c5e9, #5a2d81); }
+    &--bites-fruit { @include product-slider-theme(transparent, #7ed2fe, #dbf3ff, #0c7edf); }
+    &--bites-berry { @include product-slider-theme(transparent, #c0b1ff, #c8bbff, #693795); }
+    &--xtremes-rainbow-berry { @include product-slider-theme(transparent, #d7ffb9, #448827, #a3d132); }
+    &--xtremes-bluest-raspberry { @include product-slider-theme(transparent, #a5eeff, #a5eeff, #007bbe); }
+	&--xtremes-wacky-watermelon { @include product-slider-theme(transparent, #ff9494, #ffdbdb, #ee1c49); }
+	&--gum-watermelon { @include product-slider-theme(transparent, #fff, #fff, #94c73c); }
+	&--gum-cherry { @include product-slider-theme(transparent, #fff, #fff, #de0b36); }
+	&--gum-blue-raspberry { @include product-slider-theme(transparent, #fff, #fff, #5eb3e9); }
+  }
+
+  .product-slider_content {
+    display: flex;
+    flex-flow: column;
+    padding: 7% 5% 5%;
+  }
+
+  .product-slider_links {
+    order: 4;
+  }
+
+  .product-slider_type {
+    order: 1;
+  }
+
+  .product-slider_product-title {
+    order: 2;
+  }
+
+  .product-slider_product-description {
+    order: 3;
+  }
+
+  .product-slider_btn {
+    display: block;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+}
+
+@include breakpoint(large-only) {
+  .product-slider_title,
+  .product-slider_description,
+  .product-slider_slide--intro .product-slider_links {
+    display: none;
+  }
+
+  // slide themes
+  .product-slider_slide {
+    &--bars-blue-raspberry { @include product-slider-theme(#0083bf, #01cfff, #a5eeff); }
+    &--bars-watermelon { @include product-slider-theme(#008446, #03d86c, #90edbe); }
+    &--bars-white-mystery { @include product-slider-theme(#A7BAD8, #fff, #597198); }
+    &--bars-cherry { @include product-slider-theme(#D91E3D, #FFCFCF, #FDDCDC); }
+    &--bars-orange { @include product-slider-theme(#F37021, #FFDCA3, #FFF0D8); }
+    &--bars-strawberry { @include product-slider-theme(#FF3D7A, #FFAFC4, #FDDCDC); }
+    &--bars-green-apple { @include product-slider-theme(#8FC73E, #C6FABE, #2C871E); }
+    &--bars-grape { @include product-slider-theme(#5A2D81, #B999D9, #D7C5E9); }
+    &--bites-fruit { @include product-slider-theme(#0C7EDF, #7ED2FE, #DBF3FF); }
+    &--bites-berry { @include product-slider-theme(#693795, #C0B1FF, #C8BBFF); }
+    &--xtremes-rainbow-berry { @include product-slider-theme(#A3D132, #D7FFB9, #438726); }
+    &--xtremes-bluest-raspberry { @include product-slider-theme(#007BBE, #01CFFF, #A5EEFF); }
+    &--xtremes-wacky-watermelon { @include product-slider-theme(#EE1C49, #FF9494, #FFD6D6); }
+  }
+
+  .product-slider {
+    margin-bottom: 120px;
+    &--bites { margin-bottom: 90px; }
+    &--xtremes { margin-bottom: 140px; }
+
+    .slick-dots {
+      margin: 22px auto 150px;
+      padding: 0 10px;
+      text-align: center;
+      max-width: 1050px;
+
+      li {
+        display: inline-block;
+        padding: 11px 15px;
+
+        &:first-child { display: none; }
+      }
+    }
+
+    .slick-arrow {
+      height: 100px;
+      width: 100px;
+
+      &:before { font-size: 100px;  }
+    }
+  }
+
+  .product-slider--intro-active {
+    .slick-prev {
+      display: none !important; // !important needed to override slick's inline styles
+    }
+
+    .slick-next {
+      opacity: 1;
+
+      &:after {
+        @include font-size-tracking(50, 10, 36);
+        content: "Explore Flavors";
+        color: white;
+        left: -72px;
+        position: absolute;
+        text-transform: uppercase;
+        top: 18px;
+        width: 80px;
+      }
+    }
+  }
+
+  .product-slider_content--hover {
+    align-items: center;
+    background: rgba(0, 70, 127, 0.8);
+    bottom: 0;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    transition: all 400ms linear;
+    z-index: 1;
+
+    .product-slider_slide:first-of-type:hover & {
+      background: rgba(0, 70, 127, 0.0);
+      opacity: 0;
+    }
+
+    .product-slider_type {
+      height: 50px;
+      margin-bottom: 11px;
+      width: 141px;
+    }
+
+    .product-slider_product-title {
+      @include font-size-tracking(80, 30);
+      margin-bottom: 20px;
+    }
+
+    .product-slider_product-description {
+      @include font-size-tracking(26, 0, 40);
+      margin: 0 auto;
+      max-width: 660px;
+    }
+  }
+
+  .product-slider_content:not(.product-slider_content--hover) {
+    bottom: 0;
+    color: white;
+    left: 0;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    text-align: right;
+    z-index: 1;
+
+    .product-slider--soft-filled-bites & { top: 17%; }
+    .product-slider--xtremes-bites & { top: 18%; }
+    .product-slider--xtremes-sourfuls & { top: 21%; }
+
+    .product-slider_product-title {
+      @include font-size-tracking(56, 10, 54);
+      margin-bottom: percentage(40/1600);
+
+      .product-slider--xtremes & { font-size: 50px; }
+      .product-slider_slide--xtremes-wacky-watermelon & { font-size: 48px; }
+    }
+  }
+
+  .product-slider_type {
+    height: 37px;
+    width: 109px;
+  }
+
+  .product-slider_product-description {
+    @include font-size-tracking(22, 0, 32);
+    float: right;
+    max-width: 490px;
+  }
+
+  .product-slider_links {
+    margin-bottom: 12%;
+    .product-slider--soft-filled-bites & { margin-bottom: 10%; }
+    .product-slider--xtremes & { margin-bottom: 9%; }
+    .product-slider--xtremes-bites & { margin-bottom: 8%; }
+    .product-slider--xtremes-sourfuls & { margin-bottom: 6%; }
+  }
+
+  .product-slider_btn {
+    @include font-size-tracking(21, 0, 73);
+    display: inline-block;
+    margin-left: 2%;
+    padding: 0 2%;
+  }
+
+  .product-slider_nav {
+    margin-top: 55px;
+  }
+
+  .product-slider_thumb {
+    display: block;
+    cursor: pointer;
+
+    &:active,
+    &:focus,
+    &:hover {
+      outline: none;
+    }
+
+    &:hover {
+      animation: wiggle 200ms 2;
+    }
+
+    &--intro { display: none; }
+
+    &--bars-blue-raspberry {
+      @include sprite($nav-slide-bars-blue-raspberry);
+      .slick-active & { @include sprite($nav-slide-bars-blue-raspberry-active); }
+    }
+
+    &--bars-watermelon {
+      @include sprite($nav-slide-bars-watermelon);
+      .slick-active & { @include sprite($nav-slide-bars-watermelon-active); }
+    }
+
+    &--bars-white-mystery {
+      @include sprite($nav-slide-bars-white-mystery);
+      .slick-active & { @include sprite($nav-slide-bars-white-mystery-active); }
+    }
+
+    &--bars-cherry {
+      @include sprite($nav-slide-bars-cherry);
+      .slick-active & { @include sprite($nav-slide-bars-cherry-active); }
+    }
+
+    &--bars-orange {
+      @include sprite($nav-slide-bars-orange);
+      .slick-active & { @include sprite($nav-slide-bars-orange-active); }
+    }
+
+    &--bars-grape {
+      @include sprite($nav-slide-bars-grape);
+      .slick-active & { @include sprite($nav-slide-bars-grape-active); }
+    }
+
+    &--bars-green-apple {
+      @include sprite($nav-slide-bars-green-apple);
+      .slick-active & { @include sprite($nav-slide-bars-green-apple-active); }
+    }
+
+    &--bars-strawberry {
+      @include sprite($nav-slide-bars-strawberry);
+      .slick-active & { @include sprite($nav-slide-bars-strawberry-active); }
+    }
+
+    &--bites-fruit {
+      @include sprite($nav-slide-bites-fruit);
+      .slick-active & { @include sprite($nav-slide-bites-fruit-active); }
+    }
+
+    &--bites-berry {
+      @include sprite($nav-slide-bites-berry);
+      .slick-active & { @include sprite($nav-slide-bites-berry-active); }
+    }
+
+    &--xtremes-rainbow-berry {
+      @include sprite($nav-slide-xtremes-rainbow-berry);
+      .slick-active & { @include sprite($nav-slide-xtremes-rainbow-berry-active); }
+    }
+
+    &--xtremes-bluest-raspberry {
+      @include sprite($nav-slide-xtremes-bluest-raspberry);
+      .slick-active & { @include sprite($nav-slide-xtremes-bluest-raspberry-active); }
+    }
+
+    &--xtremes-wacky-watermelon {
+      @include sprite($nav-slide-xtremes-wacky-watermelon);
+      .slick-active & { @include sprite($nav-slide-xtremes-wacky-watermelon-active); }
+	}
+
+	&--gum-watermelon {
+		@include sprite($nav-slide-gum-watermelon);
+		.slick-active & { @include sprite($nav-slide-gum-watermelon-active); }
+	}
+
+	&--gum-cherry {
+		@include sprite($nav-slide-gum-cherry);
+		.slick-active & { @include sprite($nav-slide-gum-cherry-active); }
+	}
+
+	&--gum-blue-raspberry {
+		@include sprite($nav-slide-gum-blue-raspberry);
+		.slick-active & { @include sprite($nav-slide-gum-blue-raspberry-active); }
+	}
+  }
+}
+
+@media only screen and (min-width: $medium-breakpoint + 1) and (max-width: 1200px) {
+  .product-slider {
+    .slick-arrow:before { font-size: 80px; }
+    .slick-prev { left: 0.6%; }
+    .slick-next { right: 0.5%; }
+  }
+
+  .product-slider--intro-active {
+    .slick-next:after {
+      @include font-size-tracking(40, 10, 28);
+      left: -63px;
+      top: 16px;
+    }
+  }
+
+  .product-slider_content--hover {
+    .product-slider_type {
+      height: 39px;
+      margin-bottom: 11px;
+      width: 111px;
+    }
+
+    .product-slider_product-title {
+      @include font-size-tracking(56, 25);
+      margin-bottom: 30px;
+    }
+
+    .product-slider_product-description {
+      @include font-size-tracking(20, 0, 30);
+      max-width: 500px;
+    }
+  }
+
+  .product-slider_content:not(.product-slider_content--hover) {
+    top: 10%;
+
+    .product-slider--soft-filled-bites & { top: 16%; }
+    .product-slider--xtremes-bites & { top: 17%; }
+	.product-slider--xtremes-sourfuls & { top: 22%; }
+  }
+
+  .product-slider_links {
+    margin-bottom: 10%;
+    .product-slider--soft-filled-bites & { margin-bottom: 10%; }
+    .product-slider--xtremes-bites & { margin-bottom: 8%; }
+  }
+
+  .product-slider_btn {
+    @include font-size-tracking(19, 0, 58);
+    border-radius: 9999px;
+  }
+
+  .product-slider_type {
+    height: 32px;
+    margin-bottom: 2px;
+    width: 84px;
+  }
+
+  .product-slider_product-title {
+    @include font-size-tracking(40, 10, 38);
+    margin-bottom: 42px;
+  }
+
+  .product-slider_product-description {
+    @include font-size-tracking(18, 0, 22);
+    max-width: 440px;
+  }
+}

@@ -1,0 +1,148 @@
+// hiding because there's no way to distinguish between permalink and project/craft pages
+.single-post {
+  display: none;
+}
+
+.single-post_error {
+  @include font-size-tracking(20, 0, 25);
+  color: $color-red;
+  text-align: center;
+}
+
+.single-post_post {
+  .single-post_title {
+    @include font-size-tracking(22, 0, 27);
+    color: $color-blue-light;
+    margin: 0 0 5%;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      @include font-size-tracking(18, -10, 16);
+    }
+  }
+
+  .share-post {
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-bottom: 12%;
+
+    @include breakpoint(small) {
+      margin-bottom: 7%;
+    }
+  }
+}
+
+.single-post_inner {
+  margin: 5% auto 13%;
+  max-width: 500px;
+}
+
+.single-post_content,
+.single-post_activity {
+  background: $color-blue;
+  color: white;
+}
+
+.single-post_content {
+  padding: 5%;
+}
+
+.single-post_photo {
+  max-width: 100%;
+  width: 100%;
+}
+
+.single-post_date,
+.single-post_tag {
+  color: white;
+}
+
+.single-post_date,
+.single-post_tags {
+  text-align: center;
+}
+
+.single-post_date,
+.single-post_tags,
+.single-post_activity {
+}
+
+.single-post_date,
+.single-post_tags {
+  @include font-size-tracking(20, 0, 20);
+
+  @include breakpoint(small) {
+    @include font-size-tracking(16, 0, 16);
+  }
+}
+
+.single-post_date {
+  margin-bottom: 4%;
+}
+
+.single-post_tags {
+  margin-bottom: 3%;
+  text-transform: uppercase;
+}
+
+.single-post_tag {
+  display: inline;
+}
+
+.single-post_activity {
+  @include font-size-tracking(20, 0, 23);
+  color: $color-blue-light;
+
+  @include breakpoint(small) {
+    @include font-size-tracking(16, 0, 16);
+  }
+
+  .notes {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 20% 9%;
+
+    @include breakpoint(medium) {
+      padding: 0 10% 7%;
+    }
+
+    @include breakpoint(small) {
+      padding: 0 4% 8%;
+    }
+  }
+
+  .note {
+    margin-bottom: 4%;
+    overflow: hidden;
+  }
+
+  .avatar_frame {
+    float: left;
+    width: 22%;
+  }
+
+  .avatar {
+    display: inline;
+    height: 50px;
+    width: 50px;
+  }
+
+  .clear {
+    display: none;
+  }
+
+  .action,
+  blockquote {
+    float: right;
+    width: 78%;
+  }
+
+  a,
+  .tumblelog {
+    text-decoration: underline;
+  }
+
+  blockquote {
+    margin: 5% 0;
+  }
+}
