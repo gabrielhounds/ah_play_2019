@@ -10,6 +10,18 @@ $activeGreen: #66d82b;
 	}
 }
 
+@mixin tablet {
+	@media only screen and ( max-width : 1024px ) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media only screen and ( max-width : 414px ) {
+		@content;
+	}
+}
+
 @font-face {
 	font-family: 'uniform_roundedultra';
 	src: url("../fonts/miller_type_foundry_-_uniform_rounded_ultra-webfont.woff2") format("woff2"), url("../fonts/miller_type_foundry_-_uniform_rounded_ultra-webfont.woff") format("woff"), url("../fonts/miller_type_foundry_-_uniform_rounded_ultra-webfont.svg#uniform_roundedultra") format("svg");
@@ -70,6 +82,16 @@ body {
 	box-shadow: 0px 4px 20px 1px rgba(0, 0, 0, 0.5);
 	align-items: center;
 	justify-content: center;
+	transition: all .2s ease-out;
+
+	@include tablet {
+		flex-wrap: wrap;
+		height: 60px;
+
+		&.open {
+			height: 340px;
+		}
+	}
 }
 
 .header_logo {
@@ -77,6 +99,54 @@ body {
 	width: 128px;
 	position: relative;
 	display: inline-block;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+
+	.hamburger {
+		display: none;
+		position: relative;
+		width: 30px;
+		height: 24px;
+		//background-color: blue;
+
+		.burger {
+			width: 100%;
+			height: 6px;
+			border-radius: 15px;
+			background-color: $darkBlue;
+
+		}
+
+		@include tablet {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			//margin-right: 60px;
+
+		}
+	}
+
+	@include tablet {
+
+		width: 100%;
+		padding-left: 60px;
+		padding-right: 60px;
+		padding-top: 4px;
+		align-self: flex-start;
+
+		img {
+			width: 75px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+
+	@include mobile {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 }
 
 .nav {
@@ -86,6 +156,15 @@ body {
 	display: flex;
 	display: -ms-flexbox;
 	margin-left: 67px;
+
+	@include tablet {
+		//top: -10px;
+		flex-wrap: wrap;
+		text-align: center;
+		margin-left: 0;
+		//background-color: aqua;
+		//justify-content: space-between;
+	}
 }
 
 
@@ -96,6 +175,12 @@ body {
 	margin-left: 40px;
 	letter-spacing: -.24px;
 	line-height: 1.08333;
+	transition: all .2s ease-out;
+	z-index: 40;
+
+	&:hover {
+		color: $activeGreen;
+	}
 
 	&:first-child {
 		margin-left: 0;
@@ -103,6 +188,26 @@ body {
 
 	&.active {
 		color: $activeGreen;
+	}
+
+	@include tablet {
+		width: 100%;
+		margin-left: 0;
+		margin-top: 0px;
+		margin-bottom: 34px;
+		display: none;
+		opacity: 0;
+		//display: inline-block;
+		align-self: flex-start;
+
+		&:last-child {
+
+		}
+
+		&.open {
+			display: inline-block;
+			opacity: 1;
+		}
 	}
 }
 
@@ -143,6 +248,10 @@ body {
 		background-color: $lightBlue;
 		margin-top: 127px;
 
+		@include tablet {
+			margin-top: 60px;
+		}
+
 		.gameLogo {
 			background-image: url(../images/cab_logo.png);
 			background-repeat: no-repeat;
@@ -181,7 +290,7 @@ body {
 	width: 100%;
 	height: 12px;
 	bottom: -12px;
-	z-index: 99;
+	z-index: 20;
 
 	&.white {
 		background-image: url(../images/edge-white.svg);
@@ -206,6 +315,12 @@ body {
 	width: 100%;
 	height: 256px;
 	background-color: $footerBlue;
+	//margin-top: -1px;
+
+	@include tablet{
+		//background-color: red;
+		height: auto;
+	}
 
 }
 
@@ -222,6 +337,11 @@ body {
 	@include small-desktop {
 		flex-wrap: wrap;
 	}
+
+	@include tablet {
+		padding-top: 100px;
+
+	}
 }
 
 .footer_links {
@@ -232,6 +352,7 @@ body {
 	}
 
 	a {
+		display: inline-block;
 		margin-right: 20px;
 		font-family: 'uniform_roundedbold';
 		font-size: 18px;
@@ -273,15 +394,16 @@ body {
 		height: 54px;
 		margin-left: 8px;
 
-
-
 		@include small-desktop {
-			//width: 44px;
-			//height: 44px;
 
 			&:first-child {
 				margin-left: 0;
 			}
+		}
+
+		@include mobile {
+			width: 44px;
+			height: 44px;
 		}
 
 		img {
@@ -310,10 +432,16 @@ body {
 	@include small-desktop {
 		font-size: 11px;
 	}
+
+	@include tablet {
+		padding-bottom: 80px;
+	}
 }
 
 
-
+#ga_arrow {
+	opacity: 0;
+}
 
 
 
