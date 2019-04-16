@@ -1,9 +1,0 @@
-.video {
-	margin: 30px auto 40px;
-	max-width: 1060px + $post-margin*2;
-
-	@include breakpoint(small){
-		margin: $post-margin-mobile auto 0;
-	}
-
-}
