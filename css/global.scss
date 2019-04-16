@@ -231,9 +231,20 @@ body {
 	.cta {
 		width: 90%;
 		height: 15%;
-		background-image: url(../images/cta_playNow.png);
+		background-image: url(../images/cta_border.png);
 		background-repeat: no-repeat;
 		background-position: center top;
+
+		p {
+			//background-color: blue;
+			text-align: center;
+			font-family: 'uniform_roundedbold';
+			font-size: 24px;
+			color: #FFF;
+			margin-top: 15px;
+
+		}
+
 	}
 
 	.arrow {
