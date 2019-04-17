@@ -23,34 +23,27 @@
 
 <body class="cab">
 
-	<main class="main">
+	<main class="cab">
 
-		<header class="header" id="header">
-			<div class="header_logo">
-				<a href="http://airheads.com/"><img src="../images/logo.png" alt="Airheads Logo"> </a>
-				<div class="hamburger" id="hamburger">
-					<span class="burger" id="burger1"></span>
-					<span class="burger" id="burger2"></span>
-					<span class="burger" id="burger3"></span>
-				</div>
-			</div>
-			<nav class="nav">
-				<a href="http://airheads.com/" class="navItem">Latest</a>
-				<a href="http://airheads.com/candy" class="navItem">Candy</a>
-				<a href="#" class="navItem active">Games</a>
-				<a href="http://airheads.com/tagged/crafts" class="navItem">Crafts</a>
-				<a href="http://airheads.com/product-locator" class="navItem">Product locator</a>
-			</nav>
-			<div class="divider white"></div>
+		<header  class="cab">
+			<div class="cab logo"><a href="http://airheads.com" target="_blank"></a></div>
+			<div class="cab divider"></div>
+			<div class="cab instructions"> <p>Catch as many Airheads as you can in 30 seconds.</p> </div>
 		</header>
 
-		<section class="instructions"><p>Catch as many Airheads as you can in 30 seconds.</p></section>
 
-		<section class="gameHolder">
-			<div id="gameContainer"></div>
-		</section>
 
+
+		<div class="game">
+				<div id="gameContainer"></div>
+		</div>
+		<div id="rotateMe"><p class="rotateMeText">Please rotate your device.</p></div>
+		<div class="back_arrow"><a href="../" target="_self"></a></div>
 	</main>
+
+
+
+
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>

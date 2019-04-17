@@ -226,25 +226,25 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	
+
 	background-image: url(../images/game_logo_shadow.png);
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: 44%;
-	
+
 	a {
 		width: 100%;
 		height: 100%;
 	}
-	
+
 	@include mobile {
 		background-size: 75%;
 		background-position: center 70%;
 		height: 510px;
 	}
-	
+
 	@include mobile-landscape {
-		height: 320px;	
+		height: 320px;
 	}
 
 	.gameLogo {
@@ -254,33 +254,33 @@ body {
 		margin-top: 40px;
 		margin-left: auto;
 		margin-right: auto;
-		
+
 	}
 
 	.cta {
 		position: relative;
 		display: block;
 		top: 20px;
-		
+
 		width: 220px;
 		height: 60px;
-		
+
 		//width: 90%;
 		//height: 15%;
 		//background-image: url(../images/cta_border.png);
 		//background-repeat: no-repeat;
 		//background-position: center top;
-		
+
 		border: 3px solid #FFF;
 		border-radius: 30px;
-				
+
 		//margin-bottom: 20px;
-		
+
 		margin-left: auto;
 		margin-right: auto;
-		
+
 		cursor: pointer;
-				
+
 		@include mobile-landscape {
 			border: 2px solid #FFF;
 			width: 180px;
@@ -296,8 +296,8 @@ body {
 			color: #FFF;
 			margin-top: 12px;
 			pointer-events: none;
-			
-			
+
+
 			@include mobile-landscape {
 				margin-top: 6px;
 				font-size: 20px;
@@ -320,11 +320,11 @@ body {
 		cursor: pointer;
 		//background-color: aqua;
 		z-index: 990;
-		
+
 		&:hover {
 			//background-position: center 70%;
-		}	
-			
+		}
+
 		@include mobile {
 			background-size: 20%;
 		}
@@ -332,7 +332,7 @@ body {
 			margin-top: 20px;
 			margin-bottom: 20px;
 		}
-		
+
 	}
 
 	&.catch_a_bite {
@@ -342,7 +342,7 @@ body {
 		@include tablet {
 			margin-top: 60px;
 		}
-		
+
 		.gameLogo {
 			background-image: url(../images/cab_logo.png);
 			background-repeat: no-repeat;
@@ -535,9 +535,90 @@ body {
 	visibility: hidden;
 }
 
+body.cab {
+	background-color: $lightBlue;
+}
 
+body.fa {
+	background-color: $darkBlue;
+}
 
+body.ga {
+	background-color: $red;
+}
 
+.instructions {
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	top: 127px;
+	margin-top: 40px;
+	margin-top: 40px;
+	user-select: none;
+
+	@include tablet {
+		//display: none;
+	}
+
+	@include mobile {
+		display: none;
+	}
+
+	p {
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		font-family: 'uniform_roundedbold';
+		font-size: 28px;
+		letter-spacing: .25px;
+		color: #FFF;
+		text-rendering: optimizeLegibility;
+		font-smooth: always;
+		-webkit-font-smoothing: antialiased;
+		filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));
+	}
+}
+
+.gameHolder {
+	position: absolute;
+	width: 1280px;
+	height: 500px;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	.gameContainer {
+		width: 100%;
+		height: 100%;
+	}
+
+	@include tablet{
+		//top: 0;
+		//left: 0;
+		//transform: translate(0, 0);
+		width: 100%;
+		//height: 100%;
+	}
+
+	@include mobile {
+		top: 0;
+		left: 0;
+		transform: translate(0, 0);
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.cab .main {
+	min-height: 800px;
+}
+
+.cab .header {
+	@include mobile {
+		display: none;
+	}
+
+}
 
 
 
