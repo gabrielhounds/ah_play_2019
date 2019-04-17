@@ -232,6 +232,11 @@ body {
 	background-position: center bottom;
 	background-size: 44%;
 	
+	a {
+		width: 100%;
+		height: 100%;
+	}
+	
 	@include mobile {
 		background-size: 75%;
 		background-position: center 70%;
@@ -247,11 +252,16 @@ body {
 		width: 90%;
 		height: 70%;
 		margin-top: 40px;
+		margin-left: auto;
+		margin-right: auto;
+		
 	}
 
 	.cta {
-		
+		position: relative;
 		display: block;
+		top: 20px;
+		
 		width: 220px;
 		height: 60px;
 		
@@ -263,8 +273,11 @@ body {
 		
 		border: 3px solid #FFF;
 		border-radius: 30px;
+				
+		//margin-bottom: 20px;
 		
-		margin-bottom: 20px;
+		margin-left: auto;
+		margin-right: auto;
 		
 		cursor: pointer;
 				
