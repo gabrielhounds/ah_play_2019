@@ -165,6 +165,7 @@ a {
     margin-left: 0;
     margin-top: 0px;
     margin-bottom: 34px;
+    display: none;
     visibility: hidden;
     opacity: 0;
     align-self: flex-start;
@@ -193,12 +194,13 @@ a {
   .game {
     background-size: 75%;
     background-position: center 70%;
+    height: 510px;
   }
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
   .game {
-    height: 300px;
+    height: 320px;
   }
 }
 
@@ -221,6 +223,8 @@ a {
 
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
   .game .cta {
+    border: 2px solid #FFF;
+    width: 180px;
     margin-bottom: 10px;
     margin-top: 10px;
   }
@@ -238,27 +242,33 @@ a {
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
   .game .cta p {
     margin-top: 6px;
+    font-size: 20px;
   }
 }
 
 .game .arrow {
   width: 90%;
+  width: 220px;
   height: 10%;
   background-image: url(../images/arrow.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 4%;
-  transition: all 0.2s ease-out;
+  background-size: 20%;
   cursor: pointer;
-}
-
-.game .arrow:hover {
-  background-position: center 70%;
+  z-index: 990;
 }
 
 @media only screen and (max-width: 414px) {
   .game .arrow {
-    background-size: 14%;
+    background-size: 20%;
+  }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
+  .game .arrow {
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 

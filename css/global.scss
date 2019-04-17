@@ -201,7 +201,7 @@ body {
 		margin-left: 0;
 		margin-top: 0px;
 		margin-bottom: 34px;
-		//display: none;
+		display: none;
 		visibility: hidden;
 		opacity: 0;
 		//display: inline-block;
@@ -235,10 +235,11 @@ body {
 	@include mobile {
 		background-size: 75%;
 		background-position: center 70%;
+		height: 510px;
 	}
 	
 	@include mobile-landscape {
-		height: 300px;	
+		height: 320px;	
 	}
 
 	.gameLogo {
@@ -268,6 +269,8 @@ body {
 		cursor: pointer;
 				
 		@include mobile-landscape {
+			border: 2px solid #FFF;
+			width: 180px;
 			margin-bottom: 10px;
 			margin-top: 10px;
 		}
@@ -284,6 +287,7 @@ body {
 			
 			@include mobile-landscape {
 				margin-top: 6px;
+				font-size: 20px;
 			}
 
 		}
@@ -292,20 +296,28 @@ body {
 
 	.arrow {
 		width: 90%;
+		width: 220px;
 		height: 10%;
 		background-image: url(../images/arrow.png);
 		background-repeat: no-repeat;
 		background-position: center center;
 		background-size: 4%;
-		transition: all .2s ease-out;
+		background-size: 20%;
+		//transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		cursor: pointer;
+		//background-color: aqua;
+		z-index: 990;
 		
 		&:hover {
-			background-position: center 70%;
+			//background-position: center 70%;
 		}	
 			
 		@include mobile {
-			background-size: 14%;
+			background-size: 20%;
+		}
+		@include mobile-landscape {
+			margin-top: 20px;
+			margin-bottom: 20px;
 		}
 		
 	}

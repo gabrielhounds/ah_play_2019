@@ -9,9 +9,13 @@ function init() {
 	function isTouchDevice() {
 		return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 	};
+	
+	if (isTouchDevice()) {
+		$('.game').css({height:window.innerHeight - headerOffset});
+	}
 
 	var t = TweenMax;
-	var hamburger = $('.hamburger');
+	var hamburger = $('#hamburger');
 	
 	var _height = window.innerHeight;
 	
@@ -63,12 +67,21 @@ function init() {
 		}).mouseout(function(){
 			t.to( 	$(this), 0.6, {scale:1.0, ease:Elastic.easeOut});
 		})
+		
+		$('.arrow').mouseover(function(){
+			t.to( $(this), 0.2, {backgroundPosition : 'center 70%', ease:Power2.easeOut});
+		}).mouseout(function(){
+			t.to( $(this), 0.4, {backgroundPosition : 'center center', ease:Bounce.easeOut});
+		})
+		
 	}
+	
+	
 	
 	
 
 	$('#cab_arrow').click(function(){
-		
+					
 		t.to(window, 0.5, {scrollTo:fa_top - headerOffset, ease:Power2.easeOut});
 		
 	});
