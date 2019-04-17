@@ -22,6 +22,12 @@ $activeGreen: #66d82b;
 	}
 }
 
+@mixin mobile-landscape {
+	@media only screen and ( min-device-width : 414px ) and ( max-device-width : 736px ) and ( orientation : landscape ) {
+		@content;
+	}
+}
+
 @font-face {
 	font-family: 'uniform_roundedultra';
 	src: url("../fonts/miller_type_foundry_-_uniform_rounded_ultra-webfont.woff2") format("woff2"), url("../fonts/miller_type_foundry_-_uniform_rounded_ultra-webfont.woff") format("woff"), url("../fonts/miller_type_foundry_-_uniform_rounded_ultra-webfont.svg#uniform_roundedultra") format("svg");
@@ -195,18 +201,18 @@ body {
 		margin-left: 0;
 		margin-top: 0px;
 		margin-bottom: 34px;
-		display: none;
+		//display: none;
+		visibility: hidden;
 		opacity: 0;
 		//display: inline-block;
 		align-self: flex-start;
-
 		&:last-child {
 
 		}
 
 		&.open {
 			display: inline-block;
-			opacity: 1;
+			//opacity: 1;
 		}
 	}
 }
@@ -220,6 +226,20 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	
+	background-image: url(../images/game_logo_shadow.png);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 44%;
+	
+	@include mobile {
+		background-size: 75%;
+		background-position: center 70%;
+	}
+	
+	@include mobile-landscape {
+		height: 300px;	
+	}
 
 	.gameLogo {
 		position: relative;
@@ -229,11 +249,28 @@ body {
 	}
 
 	.cta {
-		width: 90%;
-		height: 15%;
-		background-image: url(../images/cta_border.png);
-		background-repeat: no-repeat;
-		background-position: center top;
+		
+		display: block;
+		width: 220px;
+		height: 60px;
+		
+		//width: 90%;
+		//height: 15%;
+		//background-image: url(../images/cta_border.png);
+		//background-repeat: no-repeat;
+		//background-position: center top;
+		
+		border: 3px solid #FFF;
+		border-radius: 30px;
+		
+		margin-bottom: 20px;
+		
+		cursor: pointer;
+				
+		@include mobile-landscape {
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
 
 		p {
 			//background-color: blue;
@@ -241,7 +278,13 @@ body {
 			font-family: 'uniform_roundedbold';
 			font-size: 24px;
 			color: #FFF;
-			margin-top: 15px;
+			margin-top: 12px;
+			pointer-events: none;
+			
+			
+			@include mobile-landscape {
+				margin-top: 6px;
+			}
 
 		}
 
@@ -252,7 +295,19 @@ body {
 		height: 10%;
 		background-image: url(../images/arrow.png);
 		background-repeat: no-repeat;
-		background-position: center top;
+		background-position: center center;
+		background-size: 4%;
+		transition: all .2s ease-out;
+		cursor: pointer;
+		
+		&:hover {
+			background-position: center 70%;
+		}	
+			
+		@include mobile {
+			background-size: 14%;
+		}
+		
 	}
 
 	&.catch_a_bite {
@@ -262,7 +317,7 @@ body {
 		@include tablet {
 			margin-top: 60px;
 		}
-
+		
 		.gameLogo {
 			background-image: url(../images/cab_logo.png);
 			background-repeat: no-repeat;
@@ -452,6 +507,7 @@ body {
 
 #ga_arrow {
 	opacity: 0;
+	visibility: hidden;
 }
 
 

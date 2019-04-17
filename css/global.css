@@ -165,13 +165,12 @@ a {
     margin-left: 0;
     margin-top: 0px;
     margin-bottom: 34px;
-    display: none;
+    visibility: hidden;
     opacity: 0;
     align-self: flex-start;
   }
   .navItem.open {
     display: inline-block;
-    opacity: 1;
   }
 }
 
@@ -184,6 +183,23 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-image: url(../images/game_logo_shadow.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 44%;
+}
+
+@media only screen and (max-width: 414px) {
+  .game {
+    background-size: 75%;
+    background-position: center 70%;
+  }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
+  .game {
+    height: 300px;
+  }
 }
 
 .game .gameLogo {
@@ -194,11 +210,20 @@ a {
 }
 
 .game .cta {
-  width: 90%;
-  height: 15%;
-  background-image: url(../images/cta_border.png);
-  background-repeat: no-repeat;
-  background-position: center top;
+  display: block;
+  width: 220px;
+  height: 60px;
+  border: 3px solid #FFF;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
+  .game .cta {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
 }
 
 .game .cta p {
@@ -206,7 +231,14 @@ a {
   font-family: 'uniform_roundedbold';
   font-size: 24px;
   color: #FFF;
-  margin-top: 15px;
+  margin-top: 12px;
+  pointer-events: none;
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
+  .game .cta p {
+    margin-top: 6px;
+  }
 }
 
 .game .arrow {
@@ -214,7 +246,20 @@ a {
   height: 10%;
   background-image: url(../images/arrow.png);
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center center;
+  background-size: 4%;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.game .arrow:hover {
+  background-position: center 70%;
+}
+
+@media only screen and (max-width: 414px) {
+  .game .arrow {
+    background-size: 14%;
+  }
 }
 
 .game.catch_a_bite {
@@ -424,4 +469,5 @@ a {
 
 #ga_arrow {
   opacity: 0;
+  visibility: hidden;
 }
