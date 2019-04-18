@@ -491,6 +491,8 @@ a {
 }
 
 .legal {
+  position: relative;
+  width: 40%;
   font-size: 13px;
   letter-spacing: .52px;
   line-height: 1.38462;
@@ -513,6 +515,14 @@ a {
 @media only screen and (max-width: 1024px) {
   .legal {
     padding-bottom: 80px;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
+  .legal {
+    font-size: 10px;
+    width: 80%;
   }
 }
 

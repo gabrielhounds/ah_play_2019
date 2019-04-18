@@ -544,6 +544,8 @@ body {
 }
 
 .legal {
+	position: relative;
+	width: 40%;
 	font-size: 13px;
 	letter-spacing: .52px;
 	line-height: 1.38462;
@@ -564,7 +566,14 @@ body {
 
 	@include tablet {
 		padding-bottom: 80px;
+		width: 80%;
 	}
+
+	@include mobile-landscape {
+		font-size: 10px;
+		width: 80%;
+	}
+
 }
 
 
