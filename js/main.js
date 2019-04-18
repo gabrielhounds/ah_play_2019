@@ -58,6 +58,16 @@ function init() {
 		}).mouseout(function(){
 			t.to( $(this), 0.4, {backgroundPosition : 'center center', ease:Bounce.easeOut});
 		})
+		
+		/*$('.gameLogo').mouseover(function(){
+			log('over')
+			t.to( 	$('.top', this), 0.2, {scale:1.02, ease:Power2.easeOut});
+			t.to( 	$('.bottom', this), 0.2, {scale:0.98, ease:Power2.easeOut});
+		}).mouseout(function(){
+			t.to( 	$('.top', this), 0.2, {scale:1.0, ease:Power2.easeOut});
+			t.to( 	$('.bottom', this), 0.2, {scale:1.0, ease:Power2.easeOut});
+		})*/
+		
 	}
 
 	$('#cab_arrow').click(function(){
