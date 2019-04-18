@@ -363,6 +363,7 @@ a {
   height: 12px;
   bottom: -12px;
   z-index: 20;
+  background-repeat: repeat-x;
 }
 
 .divider.white {

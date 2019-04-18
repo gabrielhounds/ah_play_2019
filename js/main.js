@@ -23,6 +23,13 @@ function init() {
 	var fa_top = $('#floatAway').offset().top;
 	var headerOffset = $('#header').height();
 
+	log('FA TOP = ',  fa_top - headerOffset );
+
+	var cabArrowBounce = TweenMax.to( $('#cab_arrow'), 0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true } );
+	var faArrowBounce  = TweenMax.to( $('#fa_arrow'),  0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true, paused:true} );
+
+	t.set($('#fa_arrow'), {opacity:0});
+
 	$(hamburger).click(function(){
 		if( $('.header').hasClass('open') ) {
 			//$('.header').removeClass('open');
@@ -53,12 +60,19 @@ function init() {
 		}).mouseout(function(){
 			t.to( 	$(this), 0.6, {scale:1.0, ease:Elastic.easeOut});
 		})
+
 		$('.arrow').mouseover(function(){
+			cabArrowBounce.pause();
+			cabArrowBounce.seek(0);
+
+			//faArrowBounce.pause();
+			//faArrowBounce.seek(0);
+
 			t.to( $(this), 0.2, {backgroundPosition : 'center 70%', ease:Power2.easeOut});
 		}).mouseout(function(){
-			t.to( $(this), 0.4, {backgroundPosition : 'center center', ease:Bounce.easeOut});
+			t.to( $(this), 0.4, {backgroundPosition : 'center center', ease:Bounce.easeOut, onComplete:function() { cabArrowBounce.play(); } });
 		})
-		
+
 		/*$('.gameLogo').mouseover(function(){
 			log('over')
 			t.to( 	$('.top', this), 0.2, {scale:1.02, ease:Power2.easeOut});
@@ -67,15 +81,46 @@ function init() {
 			t.to( 	$('.top', this), 0.2, {scale:1.0, ease:Power2.easeOut});
 			t.to( 	$('.bottom', this), 0.2, {scale:1.0, ease:Power2.easeOut});
 		})*/
-		
+
 	}
+
+	window.addEventListener('scroll', function(e) {
+		log(window.scrollY);
+
+		if(window.scrollY >= fa_top - headerOffset) {
+			t.set($('#fa_arrow'), {opacity:1});
+			t.set($('#cab_arrow'), {opacity:0});
+			faArrowBounce.play();
+
+			cabArrowBounce.pause();
+			cabArrowBounce.seek(0);
+		}
+
+		if(window.scrollY < fa_top - headerOffset) {
+
+			t.set($('#fa_arrow'), {opacity:0});
+			t.set($('#cab_arrow'), {opacity:1});
+
+			cabArrowBounce.play();
+
+			faArrowBounce.pause();
+			faArrowBounce.seek(0);
+		}
+
+	})
 
 	$('#cab_arrow').click(function(){
 		t.to(window, 0.5, {scrollTo:fa_top - headerOffset, ease:Power2.easeOut});
 	});
+
 	$('#fa_arrow').click(function(){
 		t.to(window, 0.5, {scrollTo:ga_top - headerOffset, ease:Power2.easeOut});
 	});
+
+
+
+
+
 
 	function reset() {
 		_height = window.innerHeight;
