@@ -86,8 +86,8 @@ function init() {
 		//log(window.scrollY);
 
 		if(window.scrollY >= fa_top - headerOffset) {
-			t.set($('#fa_arrow'), {opacity:1});
-			t.set($('#cab_arrow'), {opacity:0});
+			t.to($('#fa_arrow'), 0.2, {opacity:1});
+			t.to($('#cab_arrow'), 0.2, {opacity:0});
 			faArrowBounce.play();
 
 			cabArrowBounce.pause();
@@ -96,8 +96,8 @@ function init() {
 
 		if(window.scrollY < fa_top - headerOffset) {
 
-			t.set($('#fa_arrow'), {opacity:0});
-			t.set($('#cab_arrow'), {opacity:1});
+			t.to($('#fa_arrow'), 0.2, {opacity:0});
+			t.to($('#cab_arrow'), 0.2, {opacity:1});
 
 			cabArrowBounce.play();
 
