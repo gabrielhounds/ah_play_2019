@@ -259,6 +259,11 @@ body {
 		margin-left: auto;
 		margin-right: auto;
 		
+		@include mobile-landscape {
+			margin-top: 20px;
+			height: 50%
+		}
+		
 		.top {
 			position: absolute;
 			width: 100%;
@@ -301,6 +306,7 @@ body {
 		@include mobile-landscape {
 			border: 2px solid #FFF;
 			width: 180px;
+			height: 50px;
 			margin-bottom: 10px;
 			margin-top: 10px;
 		}
@@ -316,7 +322,7 @@ body {
 
 
 			@include mobile-landscape {
-				margin-top: 6px;
+				margin-top: 10px;
 				font-size: 20px;
 			}
 

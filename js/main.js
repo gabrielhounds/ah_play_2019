@@ -10,7 +10,7 @@ function init() {
 	};
 
 	if (isTouchDevice()) {
-		$('.game').css({height:window.innerHeight - headerOffset});
+		//$('.game').css({height:window.innerHeight - headerOffset});
 	}
 
 	var t = TweenMax;
