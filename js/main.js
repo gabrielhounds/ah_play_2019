@@ -23,7 +23,7 @@ function init() {
 	var fa_top = $('#floatAway').offset().top;
 	var headerOffset = $('#header').height();
 
-	log('FA TOP = ',  fa_top - headerOffset );
+	//log('FA TOP = ',  fa_top - headerOffset );
 
 	var cabArrowBounce = TweenMax.to( $('#cab_arrow'), 0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true } );
 	var faArrowBounce  = TweenMax.to( $('#fa_arrow'),  0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true, paused:true} );
@@ -73,19 +73,17 @@ function init() {
 			t.to( $(this), 0.4, {backgroundPosition : 'center center', ease:Bounce.easeOut, onComplete:function() { cabArrowBounce.play(); } });
 		})
 
-		/*$('.gameLogo').mouseover(function(){
-			log('over')
-			t.to( 	$('.top', this), 0.2, {scale:1.02, ease:Power2.easeOut});
-			t.to( 	$('.bottom', this), 0.2, {scale:0.98, ease:Power2.easeOut});
+		$('.gameLogo').mouseover(function(){
+			//log('over')
+			t.to( 	$(this), 0.2, {scale:1.1, ease:Power2.easeOut});
 		}).mouseout(function(){
-			t.to( 	$('.top', this), 0.2, {scale:1.0, ease:Power2.easeOut});
-			t.to( 	$('.bottom', this), 0.2, {scale:1.0, ease:Power2.easeOut});
-		})*/
+			t.to( 	$(this), 0.2, {scale:1.0, ease:Back.easeOut});
+		})
 
 	}
 
 	window.addEventListener('scroll', function(e) {
-		log(window.scrollY);
+		//log(window.scrollY);
 
 		if(window.scrollY >= fa_top - headerOffset) {
 			t.set($('#fa_arrow'), {opacity:1});
