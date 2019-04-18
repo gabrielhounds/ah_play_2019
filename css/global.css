@@ -314,13 +314,6 @@ a {
   }
 }
 
-.game.catch_a_bite .gameLogo {
-  background-image: url(../images/cab_logo.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-}
-
 .game.catch_a_bite .gameLogo .bottom {
   background-image: url(../images/cab_logo_inner.png);
   background-repeat: no-repeat;

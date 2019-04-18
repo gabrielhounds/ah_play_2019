@@ -75,9 +75,13 @@ function init() {
 
 		$('.gameLogo').mouseover(function(){
 			//log('over')
+			//t.to( 	$('.top', this), 0.2, {scale:1.1, ease:Power2.easeOut});
+			//t.to( 	$('.bottom', this), 0.2, {scale:1.15, ease:Power2.easeOut});
 			t.to( 	$(this), 0.2, {scale:1.1, ease:Power2.easeOut});
 		}).mouseout(function(){
 			t.to( 	$(this), 0.2, {scale:1.0, ease:Back.easeOut});
+			//t.to( 	$('.top', this), 0.2, {scale:1.0, ease:Power2.easeOut});
+			//t.to( 	$('.bottom', this), 0.2, {scale:1.0, ease:Power2.easeOut});
 		})
 
 	}
