@@ -350,6 +350,10 @@ a {
   background-size: contain;
 }
 
+.game.gummies {
+  background-color: #00B8FE;
+}
+
 .divider {
   position: absolute;
   width: 100%;
