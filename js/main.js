@@ -19,13 +19,17 @@ function init() {
 	var _height = window.innerHeight;
 	var ga_top = $('#getAirheaded').offset().top;
 	var fa_top = $('#floatAway').offset().top;
+	var gu_top = $('#gummies').offset().top;
+	
 	var headerOffset = $('#header').height();
 	//log('FA TOP = ',  fa_top - headerOffset );
 	
 	var cabArrowBounce = TweenMax.to( $('#cab_arrow'), 0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true } );
 	var faArrowBounce  = TweenMax.to( $('#fa_arrow'),  0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true, paused:true} );
+	var gaArrowBounce  = TweenMax.to( $('#ga_arrow'),  0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true, paused:true} );
 	
 	t.set($('#fa_arrow'), {opacity:0});
+	t.set($('#ga_arrow'), {opacity:0});
 	
 	$(hamburger).click(function(){
 		if( $('.header').hasClass('open') ) {
@@ -93,29 +97,53 @@ function init() {
 	
 	window.addEventListener('scroll', function(e) {
 		//log(window.scrollY);
-		if(window.scrollY >= fa_top - headerOffset) {
-			t.to($('#fa_arrow'), 0.2, {opacity:1});
-			t.to($('#cab_arrow'), 0.2, {opacity:0});
-			
-			faArrowBounce.play();
-			cabArrowBounce.pause();
-			cabArrowBounce.seek(0);
-		}
+		
 		if(window.scrollY < fa_top - headerOffset) {
 			t.to($('#fa_arrow'), 0.2, {opacity:0});
+			t.to($('#ga_arrow'), 0.2, {opacity:0});
+			
 			t.to($('#cab_arrow'), 0.2, {opacity:1});
 			
 			cabArrowBounce.play();
 			faArrowBounce.pause();
 			faArrowBounce.seek(0);
 		}
+		
+		if(window.scrollY >= fa_top - headerOffset) {
+			t.to($('#fa_arrow'), 0.2, {opacity:1});
+			
+			t.to($('#ga_arrow'), 0.2, {opacity:0});
+			t.to($('#cab_arrow'), 0.2, {opacity:0});
+			
+			faArrowBounce.play();
+			cabArrowBounce.pause();
+			cabArrowBounce.seek(0);
+		}
+		
+		if(window.scrollY >= ga_top - headerOffset) {
+			t.to($('#fa_arrow'), 0.2, {opacity:0});
+			t.to($('#cab_arrow'), 0.2, {opacity:0});
+			
+			t.to($('#ga_arrow'), 0.2, {opacity:1});
+			
+			gaArrowBounce.play();
+			
+			faArrowBounce.pause();
+			faArrowBounce.seek(0);
+		}
+		
 	});
 	
 	$('#cab_arrow').click(function(){
 		t.to(window, 0.5, {scrollTo:fa_top - headerOffset, ease:Power2.easeOut});
 	});
+	
 	$('#fa_arrow').click(function(){
 		t.to(window, 0.5, {scrollTo:ga_top - headerOffset, ease:Power2.easeOut});
+	});
+	
+	$('#ga_arrow').click(function(){
+		t.to(window, 0.5, {scrollTo:gu_top - headerOffset, ease:Power2.easeOut});
 	});
 	
 	function reset() {
