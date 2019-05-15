@@ -414,6 +414,13 @@ body {
 	&.gummies {
 		background-color: $lightBlue;
 		
+		.gameLogo {
+			background-image: url(../images/gummies_logo.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+		}
+		
 	}
 
 }
@@ -604,6 +611,10 @@ body.ga {
 	background-color: $red;
 }
 
+body.gummies {
+	background-color: $lightBlue;
+}
+
 .gamePage {
 	position: absolute;
 	top: 0;
@@ -715,6 +726,11 @@ body.ga {
 	}
 }
 
+.gummies .header {
+	@include mobile {
+		display: none;
+	}
+}
 
 
 

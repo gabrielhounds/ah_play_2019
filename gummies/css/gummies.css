@@ -1,0 +1,340 @@
+@font-face {
+  font-family: 'uniform_roundedultra';
+  src: url("../../fonts/miller_type_foundry_-_uniform_rounded_ultra-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'uniform_roundedblack';
+  src: url("../../fonts/miller_type_foundry_-_uniform_rounded_black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'uniform_roundedbold';
+  src: url("../../fonts/miller_type_foundry_-_uniform_rounded_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  position: absolute;
+}
+
+.gummies {
+  width: 20px;
+  height: 20px;
+}
+
+.gameHolder {
+  background-color: #003674;
+  background-color: blue;
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .gameHolder {
+    background-color: green;
+    width: 100vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .gameHolder {
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .gameHolder {
+    background-color: aqua;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+#main {
+  width: 1280px;
+  height: 500px;
+  background-image: url(../bg.jpg);
+  overflow: hidden;
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #main {
+    width: 100vw;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #main {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 767px) {
+  #main {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+#pack {
+  width: 274px;
+  height: 423px;
+  top: 40px;
+  left: -24px;
+  background-image: url(../package.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.cta {
+  width: 254px;
+  height: 76px;
+  background-image: url(../cta_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  cursor: pointer;
+}
+
+.cta p {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  color: #FFF;
+  font-size: 1.6em;
+  font-family: 'uniform_roundedbold';
+  text-align: center;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+}
+
+#cta {
+  left: 250px;
+  top: 330px;
+  z-index: 99;
+}
+
+#logo {
+  top: 100px;
+  left: 240px;
+  width: 280px;
+  height: 202px;
+}
+
+#logoMix {
+  top: 0;
+  left: 54px;
+  width: 174px;
+  height: 65px;
+  background-image: url(../logo_mix.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#logoMatch {
+  top: 68px;
+  left: 0;
+  width: 280px;
+  height: 72px;
+  background-image: url(../logo_match.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#logoChew {
+  top: 140px;
+  left: 26px;
+  width: 227px;
+  height: 61px;
+  background-image: url(../logo_chew.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#timer {
+  top: 115px;
+  left: 300px;
+  width: 160px;
+  height: 160px;
+}
+
+#timerIcon {
+  width: 160px;
+  height: 160px;
+}
+
+#timerText {
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 22%;
+  transform: translate(0, -50%);
+  font-family: 'uniform_roundedbold';
+  font-size: 4em;
+  text-align: left;
+  color: #FFF;
+  user-select: none;
+}
+
+#gameTxt {
+  width: 280px;
+  height: 92px;
+  top: 304px;
+  left: 236px;
+  background-image: url(../gameTxt_01.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* ENDFRAME */
+#endFrame {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../bg_endframe.jpg);
+  z-index: 999;
+}
+
+#endFrame_logo {
+  width: 711px;
+  height: 73px;
+  top: 106px;
+  left: 88px;
+  background-image: url(../logo_endframe.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+#scoreText {
+  top: 182px;
+  left: 35%;
+  transform: translate(-50%, 0);
+  width: 600px;
+  height: 80px;
+  text-align: center;
+  color: #FFF;
+  font-size: 4.4em;
+  letter-spacing: -3.5px;
+  font-family: 'uniform_roundedultra';
+  user-select: none;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  pointer-events: none;
+}
+
+#subHead {
+  width: 159px;
+  height: 31px;
+  left: 370px;
+  left: 34.7%;
+  transform: translate(-50%, 0);
+  top: 268px;
+  background-image: url(../subhead.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+#endCta1 {
+  width: 288px;
+  height: 78px;
+  left: 144px;
+  top: 324px;
+}
+
+#endCta2 {
+  width: 288px;
+  height: 78px;
+  left: 458px;
+  top: 324px;
+}
+
+/* === === === === === === ==s
+
+	GAME STUFF
+
+=== === === === === === === */
+#gameInner {
+  top: 64px;
+  right: 20px;
+  width: 710px;
+  height: 362px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.cardHolder {
+  position: relative;
+  width: 132px;
+  height: 176px;
+  perspective: 700px;
+  cursor: pointer;
+}
+
+.cardFront {
+  position: absolute;
+  width: 132px;
+  height: 176px;
+  background-image: url(../card_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  font-size: 2em;
+  font-family: monospace;
+  color: #000;
+}
+
+.cardBack {
+  position: absolute;
+  width: 132px;
+  height: 176px;
+  background-color: #ff00ff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  font-size: 2em;
+  font-family: monospace;
+  color: #FFF;
+}
+
+.cardBack img {
+  max-width: 100%;
+}

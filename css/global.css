@@ -354,6 +354,13 @@ a {
   background-color: #00B8FE;
 }
 
+.game.gummies .gameLogo {
+  background-image: url(../images/gummies_logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
 .divider {
   position: absolute;
   width: 100%;
@@ -547,6 +554,10 @@ body.ga {
   background-color: #ED1041;
 }
 
+body.gummies {
+  background-color: #00B8FE;
+}
+
 .gamePage {
   position: absolute;
   top: 0;
@@ -648,6 +659,12 @@ body.ga {
 
 @media only screen and (max-width: 414px) {
   .ga .header {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .gummies .header {
     display: none;
   }
 }
