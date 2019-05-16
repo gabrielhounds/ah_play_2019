@@ -16,8 +16,10 @@ function setUp() {
 
 function init() {
 	var log = console.log;
-	
-	var hamburger = $('#hamburger');
+  
+  	//log(window.innerWidth);
+  	
+  	var hamburger = $('#hamburger');
 
 	$(hamburger).click(function(){
 		if( $('.header').hasClass('open') ) {
@@ -56,10 +58,14 @@ function init() {
 		return a;
 	}
 
-	function random(min, max) {
+  	function random(min, max) {
 		if (max == null) { max = min; min = 0; }
 		return Math.random() * (max - min) + min;
 	}
+
+  	//ad.addCustomEvent('GAME STARTED');
+  	//ad.addCustomEvent('GAME ENDED');
+  	//ad.addCustomEvent('GAME REPLAYED');
 
 	var t = TweenMax;
 	var introTl = new TimelineMax({});
@@ -70,8 +76,12 @@ function init() {
   	//var container = $('body');
   	var container = $('#gameContainer');
   	//var main  = $('<div>', {id : 'main'	}).css({}).appendTo(container);
+  	//var main  = $('<div>', {id : 'main'	}).css({}).appendTo('body');
   	var main  = $('<div>', {id : 'main'	}).css({}).prependTo(container);
-  	
+
+  	//$('#bg_hitarea').css({ width : '100%', height : '100%', top : 0, left : 0  }).appendTo(main);
+
+  	//var gameHolder = $('<div>', {id : 'gameHolder'}).css({}).appendTo(main);
   	var gameInner = $('<div>', {id : 'gameInner'}).css({}).appendTo(main);
   	
   	var pack = $('<div>', {id : 'pack'}).css({}).appendTo(main);
@@ -89,7 +99,16 @@ function init() {
 	var gameTxt = $('<div>', {id : 'gameTxt'}).css({}).appendTo(main);
 
 	var endFrame = $('<div>', {id : 'endFrame'}).css({}).appendTo(main);
+
+  	//$('#endframe_bg_hitarea').css({ width : '100%', height : '100%', top : 0, left : 0  }).appendTo(endFrame);
+
+  	//
+
 	var endFrame_logo = $('<div>', {id : 'endFrame_logo'}).css({}).appendTo(endFrame);
+  	var endLogo1 = $('<div>', {id : 'endLogo1'}).css({}).appendTo(endFrame_logo);
+  	var endLogo2 = $('<div>', {id : 'endLogo2'}).css({}).appendTo(endFrame_logo);
+ 	var endLogo3 = $('<div>', {id : 'endLogo3'}).css({}).appendTo(endFrame_logo);
+
 	var scoreText = $('<div>', {id : 'scoreText'}).css({}).appendTo(endFrame);
 	var subHead = $('<div>', {id : 'subHead'}).css({}).appendTo(endFrame);
 	var endCta1 = $('<div id="endCta1" class="cta"><p></p></div>').css({}).appendTo(endFrame);
@@ -97,7 +116,47 @@ function init() {
 	$('#endCta1 p').html('Play again');
 	$('#endCta2 p').html('Find a pack');
 
-	t.set(endFrame, {y:-5000});
+  	//$('#cta_findAPack').css({ width : '100%', height : '100%', top : 0, left : 0  }).appendTo(endCta2);
+  
+  
+  	//var rotateOverlay = $('<div>', {id:'rotateOverlay'}).css({ width : '100%', height : '100%', 'background-color' : '#00adff', 'background-image' : 'url(rotate_img.png)', 'background-size' : 'cover', 'background-position' : 'center center' ,'z-index' : 9999}).appendTo('body');
+  
+  	//var rotateAlert = $('<div id="rotateAlert">Please rotate your device.</div>').css({   }).appendTo(rotateOverlay);
+  
+  
+
+
+	t.set(endFrame, {y:-1500});
+    //t.set(main, {opacity:0});
+  
+  	var c1, c2;
+  
+  	var mq  = window.matchMedia( '( orientation : portrait )  and ( max-device-width : 414px )' );
+	var mql = window.matchMedia( '( min-device-width : 414px ) and ( max-device-width : 896px ) and ( orientation : landscape )' );
+  
+  	var cardFace1;
+  	var cardFace2;
+  
+  	var playCount = 0;
+  
+  	
+	if( mq.matches || mql.matches ) {
+		c1 = 4;
+		c2 = 8;
+      	//cardFace1 = ['<img src="img00.jpg" >', '<img src="img01.jpg" >', '<img src="img02.jpg" >', '<img src="img03.jpg" >'];
+      	//cardFace2 = ['<img src="img00.jpg" >', '<img src="img01.jpg" >', '<img src="img02.jpg" >', '<img src="img03.jpg" >'];
+	} else {
+		c1 = 5;
+		c2 = 10;
+      	//cardFace1 = ['<img src="img00.jpg" >', '<img src="img01.jpg" >', '<img src="img02.jpg" >', '<img src="img03.jpg" >', '<img src="img04.jpg" >'];
+      	//cardFace2 = ['<img src="img00.jpg" >', '<img src="img01.jpg" >', '<img src="img02.jpg" >', '<img src="img03.jpg" >', '<img src="img04.jpg" >'];
+		//c1 = 4;
+		//c2 = 8;
+	}
+  
+  	cardFace1 = ['<img src="img00.jpg" >', '<img src="img01.jpg" >', '<img src="img02.jpg" >', '<img src="img03.jpg" >', '<img src="img04.jpg" >'];
+    cardFace2 = ['<img src="img00.jpg" >', '<img src="img01.jpg" >', '<img src="img02.jpg" >', '<img src="img03.jpg" >', '<img src="img04.jpg" >'];
+  
 
   	var clickNum = 0;
   	var clickedCards = [];
@@ -109,30 +168,30 @@ function init() {
   	var cardFace0 = [];
   	//var cardFace1 = [0, 1, 2, 3, 4];
   	//var cardFace2 = [0, 1, 2, 3, 4];
-  	var cardFace1 = ['<img src="img00.jpg" >', '<img src="img01.jpg" >', '<img src="img02.jpg" >', '<img src="img03.jpg" >', '<img src="img04.jpg" >'];
-  	var cardFace2 = ['<img src="img00.jpg" >', '<img src="img01.jpg" >', '<img src="img02.jpg" >', '<img src="img03.jpg" >', '<img src="img04.jpg" >'];
+  	
 
   	//TIMER STUFF
-
   	var time = 3;
-
 	var circTime = 0;
 	var circRatio = 100 / time;
 	var count, circ, timerInit, activeCard;
+
+  	var firstClick = true;
+
 	//$(timerText).html(':' + time);
 	$(timerText).html(':00');
 	$(timerIcon).html(timerIconSvg);
 	t.set($('#circle'), {drawSVG:'0%'});
 	t.set(timerIcon, {rotation:'-90deg'});
-	t.set(timer, {autoAlpha:0, scale:0});
+	t.set(timer, {autoAlpha:0});
 
-  	shuffle(cardFace1);
-  	shuffle(cardFace2);
+  	//shuffle(cardFace1);
+  	//shuffle(cardFace2);
 
-  	for (var i = 0; i<5; i++) {
+  	for (var i = 0; i<c1; i++) {
 	  	cardFace0.push(cardFace1[i]);
   	}
-  	for (var i = 0; i<5; i++) {
+  	for (var i = 0; i<c1; i++) {
 	  	cardFace0.push(cardFace2[i]);
   	}
   	shuffle(cardFace0);
@@ -148,30 +207,42 @@ function init() {
 		}
 	}
 
-  	$(cta).mouseover(function(){
-		t.to(cta, 0.2, {scale:1.1, ease:Power2.easeOut});
-      	t.to($('#cta p'), 0.2, {y:'-20%', opacity:0, ease:Power3.easeOut});
-      	t.set($('#cta p'), {y:'-100%', delay:0.2});
-      	t.to($('#cta p'), 0.2, {y:'-50%', opacity:1, ease:Power3.easeOut, delay:0.21});
-	}).mouseout(function(){
-		t.to(cta, 0.6, {scale:1.0, ease:Elastic.easeOut});
-	}).click(function(e) {
-	  	t.to(this, 0.2, {autoAlpha:0, scale:0, ease:Power2.easeOut});
+  	function handleGameInit() {
+      
+      	log(cardFace0);
+      
+      	//$(gameHolder).off('click');
+      	//ad.customEvent('GAME STARTED', true);
+      	firstClick = false;
+      
+     	t.to(cta, 0.2, {autoAlpha:0, scale:0, ease:Power2.easeOut});
   		t.to(logo, 0.2, {autoAlpha:0, scale:0});
-  		t.to(timer, 0.3, {autoAlpha:1, scale:1, ease:Circ.easeOut});
+  		t.to(timer, 0.3, {autoAlpha:1, ease:Circ.easeOut});
   		t.to(gameTxt, 0.3, {opacity:1, ease:Power2.easeOut})
-
   		timeTime = 0;
   		timerInit = setInterval(timerCount, 10);
-
   		t.from($('#innerCircle'), 0.95, {drawSVG:'0%', ease: Power2.easeOut});
   		t.staggerTo($('.cardHolder'), 0.5, {rotationY : '360deg', ease:Power3.easeOut, stagger:{amount:0.2, from:'center'} })
+  		
+        //$('.cardHolder').on('click', handleCardClick );
+    }
 
-  		$('.cardHolder').on('click', handleCardClick );
-
+  	$(cta).mouseover(function(){
+		//t.to(cta, 0.2, {scale:1.1, ease:Power2.easeOut});
+      	//t.to($('#cta p'), 0.2, {y:'-20%', opacity:0, ease:Power3.easeOut});
+      	//t.set($('#cta p'), {y:'-100%', delay:0.2});
+      	//t.to($('#cta p'), 0.2, {y:'-50%', opacity:1, ease:Power3.easeOut, delay:0.21});
+	}).mouseout(function(){
+		//t.to(cta, 0.6, {scale:1.0, ease:Elastic.easeOut});
+	}).click(function(e) {
+		handleGameInit();
   	});
 
-  	for (var i = 0; i < 10; i++) {
+  	//$(gameHolder).on('click', handleGameInit);
+
+
+
+  	for (var i = 0; i < c2; i++) {
 	  	cardHolder[i] = $('<div>', {id : 'cardHolder' + i, class: 'cardHolder'}).appendTo(gameInner);
 	  	frontCards[i] = $('<div>', {id : 'cardFront'  + i, class: 'cardFront' }).appendTo(cardHolder[i]);
 	  	backCards[i]  = $('<div>', {id : 'cardBack'   + i, class: 'cardBack'  }).appendTo(cardHolder[i]);
@@ -179,28 +250,41 @@ function init() {
   	}
 	$('.cardHolder .cardFront').mouseover( function(e) {
 		if (!$(this).hasClass('matched')) {
-			t.set($(this), { filter : 'drop-shadow(0 0 4px rgba(0, 0, 0, 0.5) )'});
-			t.to($(this), 0.3, {scale:1.03, ease:Power3.easeOut});
+			//t.set($(this), { filter : 'drop-shadow(0 0 4px rgba(0, 0, 0, 0.5) )'});
+			//t.to($(this), 0.3, {scale:1.03, ease:Power3.easeOut});
 		}
 	}).mouseout( function(e) {
-		t.set($(this), { filter : 'drop-shadow(0 0 0 rgba(0, 0, 0, 0.0) )'});
-		t.to($(this), 0.6, {scale:1.0, ease:Elastic.easeOut});
+		//t.set($(this), { filter : 'drop-shadow(0 0 0 rgba(0, 0, 0, 0.0) )'});
+		//t.to($(this), 0.6, {scale:1.0, ease:Elastic.easeOut});
 	});
 
 
 	function handleCardClick(e) {
 
+      	if (firstClick === true) {
+          //ad.customEvent('GAME STARTED', true);
+          t.to(cta, 0.2, {autoAlpha:0, scale:0, ease:Power2.easeOut});
+          t.to(logo, 0.2, {autoAlpha:0, scale:0});
+          t.to(timer, 0.3, {autoAlpha:1, ease:Circ.easeOut});
+          t.to(gameTxt, 0.3, {opacity:1, ease:Power2.easeOut})
+          timeTime = 0;
+          timerInit = setInterval(timerCount, 10);
+          t.from($('#innerCircle'), 0.95, {drawSVG:'0%', ease: Power2.easeOut});
+      	  firstClick = false;
+        }
+
+
+
 		if (!$(this).hasClass('matched')) {
 			$(this).addClass('matched');
-			t.to($(this).children('.cardFront'), 0.6, { 'transform' :  'rotateY(180deg)', ease:Back.easeOut});
-			t.to($(this).children('.cardBack'),  0.6, { 'transform' :  'rotateY(0deg)',   ease:Back.easeOut});
+			t.to($(this).children('.cardFront'), 0.6, { 'transform' :  'rotateY(180deg)', ease:Power2.easeOut});
+			t.to($(this).children('.cardBack'),  0.6, { 'transform' :  'rotateY(0deg)',   ease:Power2.easeOut});
 
 			checkCards( $(this) );
 		}
 	}
 
-	var gummies;
-	var tl0 = new TimelineMax();
+  	var tl0 = new TimelineMax();
 	var tl1 = new TimelineMax();
 
 	function handleBounce(theCards) {
@@ -219,14 +303,12 @@ function init() {
 		clickedCards.push(activeCard);
 		clickNum += 1;
 
-		log(clickedCards[0].width())
-
 		if (clickNum === 2) {
 			clickNum = 0;
 			//log('CHECK FOR MATCH');
 			if (  clickedCards[0].children('.cardBack').html() ===  clickedCards[1].children('.cardBack').html() ) {
 
-				handleBounce(clickedCards);
+              	handleBounce(clickedCards);
 
 				$(gameTxt).css({'background-image' : 'url(gameTxt_03.png)' });
 
@@ -239,15 +321,20 @@ function init() {
 				clickedCards.length = 0;
 				//clickNum = 0;
 
-				if (matched === 5) {
+				if (matched === c1) {
 					log('RESET THE CARDS!');
-					clearInterval(count);
 
-					setTimeout( function() {
-						handleGameOver();
-						clickedCards = [];
-						clickedCards.length = 0;
-					}, 1500 );
+
+				 	setTimeout( function() { handleReset(); }, 1500 );
+
+					/*
+                  	clearInterval(count);
+                    setTimeout( function() {
+                        handleGameOver();
+                        clickedCards = [];
+                        clickedCards.length = 0;
+                    }, 1500 );
+                    */
 				}
 			} else {
 				//log('BUMMER - RESET CARDS');
@@ -271,6 +358,25 @@ function init() {
 	}
 
 	function handleReset() {
+      	if( mq.matches || mql.matches ) {
+          if (playCount === 0) {
+        	for (var i = 0; i < c2; i++) {
+            	if ( cardFace0[i] ===  '<img src="img00.jpg" >') {
+                	cardFace0[i] = '<img src="img04.jpg" >'
+              	}
+          	 
+            }
+          }
+          
+         if (playCount === 1) {
+           for (var i = 0; i < c2; i++) {
+              	if ( cardFace0[i] = '<img src="img04.jpg" >') {
+                	cardFace0[i] = '<img src="img00.jpg" >'
+              	}
+           }
+         }
+          
+        }
 
 		shuffle(cardFace0);
 		matched = 0;
@@ -280,39 +386,68 @@ function init() {
 
 		clickedCards.length = 0;
 
-		$('.cardBack').html('');
-		$('.cardHolder').removeClass('matched');
 		t.staggerTo($('.cardHolder').children('.cardFront'), 0.6, { 'transform' :  'rotateY(0deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
 		t.staggerTo($('.cardHolder').children('.cardBack'),  0.6, { 'transform' :  'rotateY(180deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
 
-		for (var i = 0; i < 10; i++) {
-	  		$(cardFace0[i]).appendTo($(backCards[i]));
-  		}
+      	setTimeout( function() {
+      		$('.cardBack').html('');
+			$('.cardHolder').removeClass('matched');
+			for (var i = 0; i < c2; i++) {
+	  			$(cardFace0[i]).appendTo($(backCards[i]));
+  			}
+          
+          	
+          
+          
+        }, 800);
+          
+        playCount = 1;
 	}
 
 	function handleGameOver() {
 		log('GAME OVER');
 
+      	//ad.customEvent('GAME ENDED', true);
+
 		$(scoreText).html('Your score: ' + score);
+
+      	if (score === 0) {
+			$(subHead).html("Nice try.");
+        } else if (score > 0 && score < 5) {
+          	$(subHead).html("Well played!");
+        } else {
+          	$(subHead).html("You're a pro!");
+        }
 
 		endTl.add('begin')
 		.to(endFrame, 0.3, {y:0, ease:Power3.easeOut})
-		.from(endFrame_logo, 0.6, {y:-20, opacity:0, scale:0, ease:Elastic.easeOut}, '+=0.3')
+		//.from(endFrame_logo, 0.6, {y:-20, opacity:0, scale:0, ease:Elastic.easeOut}, '+=0.3')
+        .from(endLogo1, 0.6, 			{opacity:0,   scale:0, y:-20, 	ease:Elastic.easeOut}, '+=0.30')
+        .from(endLogo2, 0.6, 			{opacity:0,   scale:0, y:-20, 	ease:Elastic.easeOut}, '-=0.45')
+        .from(endLogo3, 0.6, 			{opacity:0,   scale:0, y:-20, 	ease:Elastic.easeOut}, '-=0.45')
 		.from(scoreText, 0.4, {opacity:0, y:'+=20', ease:Power3.easeOut}, '-=0.3')
 		.from(subHead, 0.4, {opacity:0, y:'+=20', ease:Power3.easeOut}, '-=0.2')
         .from(endCta1, 0.5, {opacity:0, scale:0.5, ease:Elastic.easeOut}, '-=0.1')
         .from(endCta2, 0.5, {opacity:0, scale:0.5, ease:Elastic.easeOut}, '-=0.35')
         .add('end');
 
+      	setTimeout( function() {
+
+      		//$('#endframe_bg_hitarea').css({ width : '100%', height : '100%', top : 0, left : 0  }).appendTo(endFrame);
+
+        }, 500 );
+
 	}
 
 	function handleReplay() {
 		log('REPLAY');
 
+      	ad.customEvent('GAME REPLAYED', true);
+
 		endOutTl.add('begin')
         .to(endCta1, 0.3, 			{opacity:0,   scale:0, 			ease:Power2.easeOut})
         .to(endCta2, 0.3, 			{opacity:0,   scale:0, 			ease:Power2.easeOut},  '-=0.30')
-        .to(endFrame_logo, 0.3, 	{opacity:0,   scale:0, y:-20, 	ease:Elastic.easeOut}, '-=0.25')
+        .to(endFrame_logo, 0.3, 	{opacity:0,   scale:0, y:-20, 	ease:Power2.easeOut}, '-=0.25')
 		.to(scoreText, 0.4, 		{opacity:0,   y:'-=100', 		ease:Power3.easeOut},  '-=0.25')
 		.to(subHead, 0.4, 			{opacity:0,   y:'-=100', 		ease:Power3.easeOut},  '-=0.35')
         .to(endFrame, 0.4, 			{autoAlpha:0, y:-500,   		ease:Power3.easeOut},  '-=0.20')
@@ -320,11 +455,22 @@ function init() {
         .set(endFrame_logo, 		{opacity:1,   scale:1, y:0})
         .set(scoreText, 			{opacity:1,   y:'+=100'})
         .set(subHead, 				{opacity:1,   y:'+=100'})
-        .set(endFrame, 				{y:-500, autoAlpha:1})
+        .set(endFrame, 				{y:-1500, autoAlpha:1})
         .set(endCta1, 				{opacity:1,   scale:1})
         .set(endCta2, 				{opacity:1,   scale:1})
       	.add('end');
-
+      
+		if( mq.matches || mql.matches ) {
+        	for (var i = 0; i < c2; i++) {
+              
+              if ( cardFace0[i] ===  '<img src="img00.jpg" >') {
+                
+                cardFace0[i] = '<img src="img04.jpg" >'
+               }
+              
+            }
+        }      
+      	
       	timeTime = 0;
   		time = 30;
   		circTime = 0;
@@ -343,7 +489,7 @@ function init() {
 		t.staggerTo($('.cardHolder').children('.cardFront'), 0.6, { 'transform' :  'rotateY(0deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
 		t.staggerTo($('.cardHolder').children('.cardBack'),  0.6, { 'transform' :  'rotateY(180deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
 
-		for (var i = 0; i < 10; i++) {
+		for (var i = 0; i < c2; i++) {
 	  		$(cardFace0[i]).appendTo($(backCards[i]));
   		}
 
@@ -395,42 +541,21 @@ function init() {
 		}
 	}
 
+  	$('.cardHolder').on('click', handleCardClick);
+
+
 	introTl.add('begin')
-	.staggerFrom($('.cardHolder'), 1.2, {rotationY : '-=270deg', scale:1.0, x:'+=10', opacity:1, ease:Power3.easeOut, stagger:{amount:0.3, from:'end'} }, '+=0.3')
-	.from(pack, 0.3, {x:'-=100', opacity:0, ease:Back.easeOut}, '-=1.15')
+    //.set(main, {opacity:1})
+	.staggerFrom($('.cardHolder'), 1.2, {rotationY : '-=270deg', scale:1.0, x:'+=10', opacity:1, ease:Power3.easeOut, stagger:{amount:0.3, from:'end'} }, '+=0.0')
+	.from(pack, 0.3, {x:'-=100', opacity:0, ease:Back.easeOut}, '-=0.15')
 	.from(logo, 0.6, {scale:0, opacity:0, ease:Elastic.easeOut}, '-=0.25')
 	.from(cta, 0.6, {scale:0, opacity:0, ease:Elastic.easeOut}, '-=0.5')
 	.add('end');
+  
+  
+
+    
+
+  	
+  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

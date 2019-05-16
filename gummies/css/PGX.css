@@ -1,0 +1,731 @@
+/*
+
+414px X 736px
+768px X 1024px
+
+*/
+@font-face {
+  font-family: 'uniform_roundedultra';
+  src: url("miller_type_foundry_-_uniform_rounded_ultra-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'uniform_roundedblack';
+  src: url("miller_type_foundry_-_uniform_rounded_black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'uniform_roundedbold';
+  src: url("miller_type_foundry_-_uniform_rounded_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  position: absolute;
+}
+
+#rotateAlert {
+  width: 20%;
+  height: 2em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'uniform_roundedbold';
+  color: #FFF;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.gummies {
+  width: 20px;
+  height: 20px;
+  background-color: aqua;
+}
+
+#main {
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #main {
+    background-image: url(bg_p.jpg);
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #main {
+    background-image: url(bg_p.jpg);
+  }
+}
+
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) {
+  #main {
+    background-image: url(bg.jpg);
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #main {
+    background-image: url(bg.jpg);
+  }
+}
+
+#pack {
+  width: 274px;
+  height: 423px;
+  top: 50%;
+  left: -54px;
+  transform: translate(0, -50%);
+  background-image: url(package.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #pack {
+    width: 80%;
+    height: 70%;
+    top: 54%;
+    left: -60px;
+    transform: translate(0, 0);
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #pack {
+    width: 75%;
+    top: 54%;
+    left: -40px;
+    transform: translate(0, 0);
+    background-position: top center;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #pack {
+    width: 25%;
+    top: 54%;
+    left: -20px;
+    transform: translate(0, -50%);
+    background-position: center center;
+  }
+}
+
+.cta {
+  width: 254px;
+  height: 76px;
+  background-image: url(cta_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  cursor: pointer;
+}
+
+.cta p {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  color: #FFF;
+  font-size: 1.6em;
+  font-family: 'uniform_roundedbold';
+  text-align: center;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+}
+
+#cta {
+  top: 65%;
+  left: 33.33%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #cta {
+    top: auto;
+    bottom: 90px;
+    left: 56%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #cta {
+    width: 154px;
+    top: auto;
+    bottom: 60px;
+    left: 54%;
+    transform: translate(0, 0);
+  }
+  #cta p {
+    font-size: 1.0em;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) {
+  #cta {
+    top: 65%;
+    width: 220px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #cta {
+    top: 75%;
+    width: 154px;
+  }
+  #cta p {
+    font-size: 1.0em;
+  }
+}
+
+#logo {
+  top: 40%;
+  left: 33.33%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 202px;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #logo {
+    top: 60%;
+    left: 56%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #logo {
+    width: 40%;
+    height: 20%;
+    top: 56%;
+    left: 52%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) {
+  #logo {
+    top: 44%;
+    width: 220px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #logo {
+    width: 23%;
+  }
+}
+
+#logoMix {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(logo_mix.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#logoMatch {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(logo_match.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#logoChew {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(logo_chew.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#timer {
+  top: 40%;
+  left: 33.33%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #timer {
+    top: 60%;
+    left: 60%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #timer {
+    top: 54%;
+    left: 56%;
+    transform: translate(0, 0);
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) {
+  #timer {
+    top: 42%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #timer {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+#timerIcon {
+  width: 100%;
+  height: 100%;
+}
+
+#timerText {
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 22%;
+  transform: translate(0, -50%);
+  font-family: 'uniform_roundedbold';
+  font-size: 4em;
+  text-align: left;
+  color: #FFF;
+  user-select: none;
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #timerText {
+    left: 25%;
+    font-size: 2.5em;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #timerText {
+    left: 25%;
+    font-size: 2.5em;
+  }
+}
+
+#gameTxt {
+  width: 280px;
+  height: 92px;
+  top: 65%;
+  left: 33.33%;
+  transform: translate(-50%, -50%);
+  background-image: url(gameTxt_01.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #gameTxt {
+    top: 80%;
+    left: 52%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #gameTxt {
+    top: 76%;
+    left: 54%;
+    transform: translate(0, 0);
+    width: 38%;
+    height: 92px;
+    background-position: top center;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) {
+  #gameTxt {
+    width: 200px;
+    top: 62%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #gameTxt {
+    top: 70%;
+    width: 20%;
+  }
+}
+
+/* ENDFRAME */
+#endFrame {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(bg_endframe.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 70% center;
+  z-index: 999;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #endFrame {
+    background-image: url(bg_endframe_p.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #endFrame {
+    background-image: url(bg_endframe_p.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+#endFrame_logo {
+  width: 600px;
+  height: 73px;
+  top: 220px;
+  left: 54px;
+  background-image: url(logo_endframe.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #endFrame_logo {
+    top: 168px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #endFrame_logo {
+    width: 94%;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-position: center top;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #endFrame_logo {
+    width: 60%;
+    top: 80px;
+    left: 33.33%;
+    transform: translate(-50%, 0);
+    background-position: center top;
+  }
+}
+
+#scoreText {
+  top: 50%;
+  left: 33.33%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 80px;
+  text-align: center;
+  color: #FFF;
+  font-size: 4.6em;
+  font-family: 'uniform_roundedultra';
+  user-select: none;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  pointer-events: none;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #scoreText {
+    left: 50%;
+    top: 300px;
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #scoreText {
+    left: 50%;
+    top: 200px;
+    width: 90%;
+    font-size: 2.8em;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #scoreText {
+    left: 33.33%;
+    top: 120px;
+    transform: translate(-50%, 0);
+    font-size: 3.0em;
+  }
+}
+
+#subHead {
+  width: 159px;
+  height: 31px;
+  left: 370px;
+  left: 33.33%;
+  transform: translate(-50%, 0);
+  top: 56%;
+  color: #FFF;
+  font-size: 1.6em;
+  font-family: 'uniform_roundedbold';
+  text-align: center;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #subHead {
+    top: 356px;
+    left: 50%;
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #subHead {
+    top: 220px;
+    left: 50%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #subHead {
+    top: 180px;
+  }
+}
+
+#endCta1 {
+  left: 33.33%;
+  transform: translate(-110%, 0);
+  top: 70%;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #endCta1 {
+    top: 430px;
+    left: 50%;
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #endCta1 {
+    top: 280px;
+    left: 50%;
+    width: 154px;
+  }
+  #endCta1 p {
+    font-size: 1.0em;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #endCta1 {
+    top: 210px;
+    width: 154px;
+  }
+  #endCta1 p {
+    font-size: 1.0em;
+  }
+}
+
+#endCta2 {
+  left: 33.33%;
+  transform: translate(10%, 0);
+  top: 70%;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #endCta2 {
+    top: 430px;
+    left: 50%;
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #endCta2 {
+    top: 280px;
+    left: 50%;
+    width: 154px;
+  }
+  #endCta2 p {
+    font-size: 1.0em;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #endCta2 {
+    top: 210px;
+    width: 154px;
+  }
+  #endCta2 p {
+    font-size: 1.0em;
+  }
+}
+
+/* === === === === === === ==s
+
+	GAME STUFF
+
+=== === === === === === === */
+#gameHolder {
+  top: 50%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  width: 710px;
+  height: 362px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  #gameHolder {
+    top: 160px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  #gameHolder {
+    top: 70px;
+    left: 50%;
+    width: 96%;
+    height: 246px;
+    transform: translate(-50%, 0);
+    justify-content: space-around;
+    align-content: flex-start;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) {
+  #gameHolder {
+    width: 48%;
+    height: 280px;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  #gameHolder {
+    width: 40%;
+    height: 64%;
+    left: 76%;
+  }
+}
+
+.cardHolder {
+  position: relative;
+  width: 132px;
+  height: 176px;
+  perspective: 700px;
+  cursor: pointer;
+}
+
+@media (orientation: portrait) and (max-device-width: 414px) {
+  .cardHolder {
+    width: 90px;
+    width: 22%;
+    height: 120px;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 768px) and (max-width: 1024px) {
+  .cardHolder {
+    width: 18%;
+    height: 48%;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 414px) and (max-width: 896px) {
+  .cardHolder {
+    width: 22%;
+  }
+}
+
+.cardFront {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(card_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(0deg);
+}
+
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.cardBack img {
+  max-width: 100%;
+}

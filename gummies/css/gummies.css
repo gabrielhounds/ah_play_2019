@@ -25,30 +25,44 @@ body, * {
   box-sizing: border-box;
 }
 
+@media (max-width: 767px) {
+  body, * {
+    overflow: hidden;
+  }
+}
+
 div {
   position: absolute;
 }
 
-.gummies {
-  width: 20px;
-  height: 20px;
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .instructions {
+    display: none;
+  }
 }
 
-.gameHolder {
-  background-color: #003674;
-  background-color: blue;
+@media (min-width: 768px) and (max-width: 1024px) {
+  .instructions {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .gamePage {
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 @media (min-width: 1025px) and (max-width: 1279px) {
   .gameHolder {
-    background-color: green;
     width: 100vw;
+    height: 100vh;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .gameHolder {
-    background-color: red;
     width: 100vw;
     height: 100vh;
   }
@@ -56,7 +70,14 @@ div {
 
 @media (max-width: 767px) {
   .gameHolder {
-    background-color: aqua;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  #gameContainer {
     width: 100vw;
     height: 100vh;
   }
@@ -67,12 +88,18 @@ div {
   height: 500px;
   background-image: url(../bg.jpg);
   overflow: hidden;
+  border: 2px solid #FFF;
 }
 
 @media (min-width: 1025px) and (max-width: 1279px) {
   #main {
     width: 100vw;
+    height: 100vh;
     overflow: hidden;
+    background-image: url(../bg_p.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
 }
 
@@ -80,6 +107,11 @@ div {
   #main {
     width: 100vw;
     height: 100vh;
+    background-image: url(../bg_p.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    border: none;
   }
 }
 
@@ -87,6 +119,11 @@ div {
   #main {
     width: 100vw;
     height: 100vh;
+    background-image: url(../bg_p.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    border: none;
   }
 }
 
@@ -99,6 +136,36 @@ div {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #pack {
+    width: 80%;
+    height: 70%;
+    top: 60%;
+    left: -60px;
+    transform: translate(0, 0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #pack {
+    width: 80%;
+    height: 70%;
+    top: 60%;
+    left: -80px;
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  #pack {
+    width: 75%;
+    top: 54%;
+    left: -40px;
+    transform: translate(0, 0);
+    background-position: top center;
+  }
 }
 
 .cta {
@@ -136,6 +203,37 @@ div {
   z-index: 99;
 }
 
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #cta {
+    top: auto;
+    bottom: 60px;
+    left: 57%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #cta {
+    top: auto;
+    bottom: 60px;
+    left: 57%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  #cta {
+    width: 154px;
+    top: auto;
+    bottom: 60px;
+    left: 54%;
+    transform: translate(0, 0);
+  }
+  #cta p {
+    font-size: 1.0em;
+  }
+}
+
 #logo {
   top: 100px;
   left: 240px;
@@ -143,11 +241,37 @@ div {
   height: 202px;
 }
 
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #logo {
+    top: 60%;
+    left: 56%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #logo {
+    top: 60%;
+    left: 56%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  #logo {
+    width: 40%;
+    height: 20%;
+    top: 56%;
+    left: 52%;
+    transform: translate(0, 0);
+  }
+}
+
 #logoMix {
   top: 0;
-  left: 54px;
-  width: 174px;
-  height: 65px;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url(../logo_mix.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -155,10 +279,10 @@ div {
 }
 
 #logoMatch {
-  top: 68px;
+  top: 0;
   left: 0;
-  width: 280px;
-  height: 72px;
+  width: 100%;
+  height: 100%;
   background-image: url(../logo_match.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -166,10 +290,10 @@ div {
 }
 
 #logoChew {
-  top: 140px;
-  left: 26px;
-  width: 227px;
-  height: 61px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url(../logo_chew.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -183,9 +307,35 @@ div {
   height: 160px;
 }
 
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #timer {
+    top: 60%;
+    left: 60%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #timer {
+    top: 60%;
+    left: 60%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  #timer {
+    top: 54%;
+    left: 56%;
+    transform: translate(0, 0);
+    width: 120px;
+    height: 120px;
+  }
+}
+
 #timerIcon {
-  width: 160px;
-  height: 160px;
+  width: 100%;
+  height: 100%;
 }
 
 #timerText {
@@ -201,6 +351,13 @@ div {
   user-select: none;
 }
 
+@media (max-width: 767px) {
+  #timerText {
+    left: 25%;
+    font-size: 2.5em;
+  }
+}
+
 #gameTxt {
   width: 280px;
   height: 92px;
@@ -214,6 +371,33 @@ div {
   opacity: 0;
 }
 
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #gameTxt {
+    top: 80%;
+    left: 56%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #gameTxt {
+    top: 80%;
+    left: 52%;
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  #gameTxt {
+    top: 76%;
+    left: 54%;
+    transform: translate(0, 0);
+    width: 38%;
+    height: 92px;
+    background-position: top center;
+  }
+}
+
 /* ENDFRAME */
 #endFrame {
   width: 100%;
@@ -221,7 +405,34 @@ div {
   top: 0;
   left: 0;
   background-image: url(../bg_endframe.jpg);
-  z-index: 999;
+  z-index: 20;
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #endFrame {
+    background-image: url(../bg_endframe_p.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #endFrame {
+    background-image: url(../bg_endframe_p.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+@media (max-width: 767px) {
+  #endFrame {
+    background-image: url(../bg_endframe_p.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 }
 
 #endFrame_logo {
@@ -234,6 +445,32 @@ div {
   background-size: contain;
   background-repeat: no-repeat;
   pointer-events: none;
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #endFrame_logo {
+    top: 168px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #endFrame_logo {
+    top: 168px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  #endFrame_logo {
+    width: 94%;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-position: center top;
+  }
 }
 
 #scoreText {
@@ -253,6 +490,29 @@ div {
   pointer-events: none;
 }
 
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #scoreText {
+    left: 50%;
+    top: 300px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #scoreText {
+    left: 50%;
+    top: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  #scoreText {
+    left: 50%;
+    top: 200px;
+    width: 90%;
+    font-size: 2.8em;
+  }
+}
+
 #subHead {
   width: 159px;
   height: 31px;
@@ -260,10 +520,35 @@ div {
   left: 34.7%;
   transform: translate(-50%, 0);
   top: 268px;
-  background-image: url(../subhead.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
+  color: #FFF;
+  font-size: 1.6em;
+  font-family: 'uniform_roundedbold';
+  text-align: center;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #subHead {
+    top: 260px;
+    left: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #subHead {
+    top: 260px;
+    left: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  #subHead {
+    top: 160px;
+    left: 50%;
+  }
 }
 
 #endCta1 {
@@ -273,11 +558,67 @@ div {
   top: 324px;
 }
 
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #endCta1 {
+    transform: translate(-110%, 0);
+    top: 430px;
+    left: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #endCta1 {
+    transform: translate(-110%, 0);
+    top: 430px;
+    left: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  #endCta1 {
+    transform: translate(-110%, 0);
+    top: 280px;
+    left: 50%;
+    width: 154px;
+  }
+  #endCta1 p {
+    font-size: 1.0em;
+  }
+}
+
 #endCta2 {
   width: 288px;
   height: 78px;
   left: 458px;
   top: 324px;
+}
+
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #endCta2 {
+    transform: translate(10%, 0);
+    top: 430px;
+    left: 50%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #endCta2 {
+    transform: translate(10%, 0);
+    top: 430px;
+    left: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  #endCta2 {
+    transform: translate(10%, 0);
+    top: 280px;
+    left: 50%;
+    width: 154px;
+  }
+  #endCta2 p {
+    font-size: 1.0em;
+  }
 }
 
 /* === === === === === === ==s
@@ -297,6 +638,34 @@ div {
   align-content: space-between;
 }
 
+@media (min-width: 1025px) and (max-width: 1279px) {
+  #gameInner {
+    top: 160px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #gameInner {
+    top: 160px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  #gameInner {
+    top: 70px;
+    left: 50%;
+    width: 96%;
+    height: 246px;
+    transform: translate(-50%, 0);
+    justify-content: space-around;
+    align-content: flex-start;
+  }
+}
+
 .cardHolder {
   position: relative;
   width: 132px;
@@ -305,19 +674,24 @@ div {
   cursor: pointer;
 }
 
+@media (max-width: 767px) {
+  .cardHolder {
+    width: 90px;
+    width: 22%;
+    height: 120px;
+  }
+}
+
 .cardFront {
   position: absolute;
-  width: 132px;
-  height: 176px;
+  width: 100%;
+  height: 100%;
   background-image: url(../card_bg.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
   backface-visibility: hidden;
   transform: rotateY(0deg);
-  font-size: 2em;
-  font-family: monospace;
-  color: #000;
 }
 
 .cardBack {

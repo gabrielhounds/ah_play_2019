@@ -1,40 +1,52 @@
+/*
+
+414px X 736px
+768px X 1024px
+
+*/
+
+
 @font-face {
   font-family: 'uniform_roundedultra';
-  src: url("../../fonts/miller_type_foundry_-_uniform_rounded_ultra-webfont.woff") format("woff");  
+  src: url("miller_type_foundry_-_uniform_rounded_ultra-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'uniform_roundedblack';
-  src: url("../../fonts/miller_type_foundry_-_uniform_rounded_black-webfont.woff") format("woff");
+  src: url("miller_type_foundry_-_uniform_rounded_black-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'uniform_roundedbold';
-  src: url("../../fonts/miller_type_foundry_-_uniform_rounded_bold-webfont.woff") format("woff");
+  src: url("miller_type_foundry_-_uniform_rounded_bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
-// DESKTOP LESS THAN 1280 PX
-@mixin small-desktop {
-	@media (min-width : 1025px ) and ( max-width : 1279px ) {
+@mixin mobile-portrait {
+	@media ( orientation : portrait ) and ( max-device-width : 414px ) {
 		@content;
 	}
 }
 
-
-@mixin tablet {
-	@media (min-width : 768px) and (max-width : 1024px) {
+@mixin tablet-portrait {
+	@media ( orientation : portrait ) and ( min-width : 768px ) and ( max-width : 1024px ) {
 		@content;
 	}
 }
 
-@mixin mobile {
-	@media (max-width : 767px) {
+@mixin tablet-landscape {
+	@media ( orientation : landscape ) and ( min-width : 768px ) and ( max-width : 1024px ) {
+		@content;
+	}
+}
+
+@mixin mobile-landscape {
+	@media ( orientation : landscape ) and ( min-width : 414px ) and ( max-width : 896px ) {
 		@content;
 	}
 }
@@ -43,153 +55,85 @@ body, * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	@include mobile {
-		overflow: hidden;
-	}
-	
+}
+
+img {
+	margin: 0;
+	padding: 0;
 }
 
 div {
 	position: absolute;
 }
 
+#rotateAlert {
+	width: 20%;
+	height: 2em;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: 'uniform_roundedbold';
+	color: #FFF;
+	font-size: 1.2em;
+	text-align: center;
+}
+
 .gummies {
-	//width: 20px;
-	//height: 20px;
+	width: 20px;
+	height: 20px;
+	background-color: aqua;
 }
-
-.gummies .header {
-	@include mobile {
-		//display: none;
-	}
-}
-
-.instructions {
-	@include small-desktop {
-		display: none;
-   }
-   
-   @include tablet {
-	   display: none;
-   }
-   	
-}
-
-.gamePage {
-	//background-color: black;
-	
-	@include mobile {
-		width: 100vw;
-		height: 100vh;
-	}
-}
-
-.gameHolder {
-	//background-color: #003674;
-	//background-color: blue;
-	
-	
-	@include small-desktop {
-		//background-color: green;
-		width: 100vw;
-		height: 100vh;
-   }
-   
-   @include tablet {
-	   //background-color: red;
-	   width: 100vw;
-	   height: 100vh;
-   }
-   
-   @include mobile {
-	   //background-color: aqua;
-	   width: 100vw;
-	   height: 100vh;
-	   overflow: hidden;
-   }
-   
-}
-
-#gameContainer {
-	@include mobile {
-	   width: 100vw;
-	   height: 100vh;
-   }
-}
-
 
 #main {
-	width: 1280px;
-	height: 500px;
-	//left: 50%;
-	//transform: translate(-50%);
-	background-image: url(../bg.jpg);
-	//background-image: url(GUIDE_00.jpg);
-	overflow: hidden;
-	border: 2px solid #FFF;
-  
-	@include small-desktop {
-		width: 100vw;
-		height: 100vh;
-		overflow: hidden;
-		background-image: url(../bg_p.jpg);
-		background-size: cover;
-		background-position: center top;
-		background-repeat: no-repeat;
-	}
-	
-	@include tablet {
-		width: 100vw;
-		height: 100vh;
-		background-image: url(../bg_p.jpg);
-		background-size: cover;
-		background-position: center top;
-		background-repeat: no-repeat;
-		border: none;
-	}
-  
-	@include mobile {
-		width: 100vw;
-		height: 100vh;
-		background-image: url(../bg_p.jpg);
-		background-size: cover;
-		background-position: center top;
-		background-repeat: no-repeat;
-		border: none;
-	}
-  
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  background-image: url(bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  //background-image: url(GUIDE_00.jpg);
+  overflow: hidden;
+
+  @include tablet-portrait {
+	  background-image: url(bg_p.jpg);
+  }
+
+  @include mobile-portrait {
+	  background-image: url(bg_p.jpg);
+  }
+
+  @include tablet-landscape {
+	  background-image: url(bg.jpg);
+  }
+
+  @include mobile-landscape {
+	  background-image: url(bg.jpg);
+  }
+
 }
 
 #pack {
-	//205 421
 	width: 274px;
 	height: 423px;
-	top: 40px;
-	left: -24px;
-	background-image: url(../package.png);
+	top: 50%;
+	left: -54px;
+	transform: translate(0, -50%);
+	background-image: url(package.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
-	
-	@include small-desktop {
+
+	@include tablet-portrait {
 		width: 80%;
 		height: 70%;
-		top: 60%;
+		top: 54%;
 		left: -60px;
 		transform: translate(0, 0);
 		//background-color: aqua;
 	}
-	
-	@include tablet {
-		width: 80%;
-		height: 70%;
-		top: 60%;
-		left: -80px;
-		transform: translate(0, 0);
-		//background-color: aqua;
-	}
-	
-	@include mobile {
+
+	@include mobile-portrait {
 		width: 75%;
 		//height: 210px;
 		top: 54%;
@@ -197,13 +141,22 @@ div {
 		transform: translate(0, 0);
 		background-position: top center;
 	}
-}
 
+	@include mobile-landscape {
+		width: 25%;
+		//height: 210px;
+		top: 54%;
+		left: -20px;
+		transform: translate(0, -50%);
+		background-position: center center;
+	}
+
+}
 
 .cta {
   width: 254px;
   height: 76px;
-  background-image: url(../cta_bg.png);
+  background-image: url(cta_bg.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -230,25 +183,19 @@ div {
 }
 
 #cta {
-  left: 250px;
-  top: 330px;
+  top: 65%;
+  left: 33.33%;
+  transform: translate(-50%, -50%);
   z-index: 99;
-  
-  @include small-desktop {
+
+  @include tablet-portrait {
 	  top: auto;
-	  bottom: 60px;
-	  left: 57%;
+	  bottom: 90px;
+	  left: 56%;
 	  transform: translate(0, 0);
   }
-  
-  @include tablet {
-	  top: auto;
-	  bottom: 60px;
-	  left: 57%;
-	  transform: translate(0, 0);
-  }
-  
-  @include mobile {
+
+  @include mobile-portrait {
 	  width: 154px;
 	  //height: 76px;
 	  top: auto;
@@ -260,28 +207,39 @@ div {
 		 font-size: 1.0em;
 	  }
   }
-  
+
+  @include tablet-landscape {
+	top: 65%;
+  	width: 220px;
+  }
+
+  @include mobile-landscape {
+	  top: 75%;
+	  width: 154px;
+
+	  & p {
+		 font-size: 1.0em;
+	  }
+
+  }
+
+
 }
 
 #logo {
-	top: 100px;
-	left: 240px;
+	top: 40%;
+	left: 33.33%;
+	transform: translate(-50%, -50%);
 	width: 280px;
 	height: 202px;
-	
-	@include small-desktop {
-		top: 60%;
-		left: 56%;
-		transform: translate(0, 0);
+
+	@include tablet-portrait {
+	  top: 60%;
+	  left: 56%;
+	  transform: translate(0, 0);
   	}
-  	
-  	@include tablet {
-		top: 60%;
-		left: 56%;
-		transform: translate(0, 0);
-  	}
-  	
-  	@include mobile {
+
+  	@include mobile-portrait {
 	  width: 40%;
 	  height: 20%;
 	  top: 56%;
@@ -289,7 +247,17 @@ div {
 	  transform: translate(0, 0);
 	  //background-color: aqua;
   	}
-	
+
+  	@include tablet-landscape {
+	  	top: 44%;
+  		width: 220px;
+  	}
+
+  	@include mobile-landscape {
+  		width: 23%;
+
+	}
+
 }
 
 #logoMix {
@@ -297,7 +265,7 @@ div {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(../logo_mix.png);
+	background-image: url(logo_mix.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
@@ -308,7 +276,7 @@ div {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(../logo_match.png);
+	background-image: url(logo_match.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
@@ -319,38 +287,42 @@ div {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-image: url(../logo_chew.png);
+	background-image: url(logo_chew.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
 }
 
 #timer {
-	top: 115px;
-	left: 300px;
+	top: 40%;
+	left: 33.33%;
+	transform: translate(-50%, -50%);
 	width: 160px;
 	height: 160px;
-	
-	@include small-desktop {
+
+	@include tablet-portrait {
 		top: 60%;
 		left: 60%;
 		transform: translate(0, 0);
 	}
-	
-	@include tablet {
-		top: 60%;
-		left: 60%;
-		transform: translate(0, 0);
-	}
-	
-	@include mobile {
+
+	@include mobile-portrait {
 		top: 54%;
 		left: 56%;
 		transform: translate(0, 0);
 		width: 120px;
 		height: 120px;
 	}
-	
+
+	@include tablet-landscape {
+		top: 42%;
+	}
+
+	@include mobile-landscape {
+		width: 120px;
+		height: 120px;
+	}
+
 }
 
 #timerIcon {
@@ -369,45 +341,55 @@ div {
 	text-align: left;
 	color: #FFF;
 	user-select: none;
-	
-	@include mobile {
+
+	@include mobile-portrait {
 		left: 25%;
 		font-size: 2.5em;
 	}
-	
+
+	@include mobile-landscape {
+		left: 25%;
+		font-size: 2.5em;
+	}
 }
 
 #gameTxt {
 	width: 280px;
 	height: 92px;
-	top: 304px;
-	left: 236px;
-	background-image: url(../gameTxt_01.png);
+	top: 65%;
+	left: 33.33%;
+	transform: translate(-50%, -50%);
+	background-image: url(gameTxt_01.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
 	pointer-events: none;
 	opacity: 0;
-	
-	@include small-desktop {
-		top: 80%;
-		left: 56%;
-		transform: translate(0, 0);
-	}
-	
-	@include tablet {
+
+	@include tablet-portrait {
 		top: 80%;
 		left: 52%;
 		transform: translate(0, 0);
 	}
-	
-	@include mobile {
+
+	@include mobile-portrait {
 		top: 76%;
 		left: 54%;
 		transform: translate(0, 0);
 		width: 38%;
 		height: 92px;
 		background-position: top center;
+	}
+
+	@include tablet-landscape {
+		width: 200px;
+		top: 62%;
+	}
+
+	@include mobile-landscape {
+		top: 70%;
+		width: 20%;
+
 	}
 }
 
@@ -419,94 +401,98 @@ div {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-image: url(../bg_endframe.jpg);
-	z-index: 20;
-	
-	@include small-desktop {
-		 background-image: url(../bg_endframe_p.jpg);
+	background-image: url(bg_endframe.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 70% center;
+	z-index: 999;
+
+	@include tablet-portrait {
+		 background-image: url(bg_endframe_p.jpg);
 		 background-size: cover;
 		 background-repeat: no-repeat;
 		 background-position: center center;
 	}
-	
-	@include tablet {
-		 background-image: url(../bg_endframe_p.jpg);
+
+	@include mobile-portrait {
+		 background-image: url(bg_endframe_p.jpg);
 		 background-size: cover;
 		 background-repeat: no-repeat;
 		 background-position: center center;
 	}
-	
-	@include mobile {
-		 background-image: url(../bg_endframe_p.jpg);
-		 background-size: cover;
-		 background-repeat: no-repeat;
-		 background-position: center center;
-	}
+
 }
 
 #endFrame_logo {
-	width: 711px;
+	width: 600px;
 	height: 73px;
-	top: 106px;
-	left: 88px;
-	background-image: url(../logo_endframe.png);
+	top: 220px;
+	left: 54px;
+	background-image: url(logo_endframe.png);
 	background-repeat: no-repeat;
 	background-size: contain;
   	background-repeat: no-repeat;
   	pointer-events: none;
-  	
-  	@include small-desktop {
+
+  	@include tablet-portrait {
 	  	top: 168px;
 	  	left: 50%;
 	  	transform: translate(-50%, 0);
   	}
-  	
-  	@include tablet {
-	  	top: 168px;
-	  	left: 50%;
-	  	transform: translate(-50%, 0);
-  	}
-  	
-  	@include mobile {
+
+  	@include mobile-portrait {
 	  	width: 94%;
 	  	top: 100px;
 	  	left: 50%;
 	  	transform: translate(-50%, 0);
 	  	background-position: center top;
   	}
+
+  	@include mobile-landscape {
+	  	width: 60%;
+	  	top: 80px;
+	  	left: 33.33%;
+	  	transform: translate(-50%, 0);
+	  	background-position: center top;
+  	}
+
 }
 
 #scoreText {
-	top: 182px;
-	left: 35%;
-	transform: translate(-50%, 0);
+	//top: 188px;
+	top: 50%;
+	//left: 130px;
+	//transform: translate(0, -50%);
+	left: 33.33%;
+	transform: translate(-50%, -50%);
 	width: 600px;
 	height: 80px;
 	text-align: center;
 	color: #FFF;
-	font-size: 4.4em;
-	letter-spacing: -3.5px;
+	font-size: 4.6em;
 	font-family: 'uniform_roundedultra';
 	user-select: none;
 	font-smooth: always;
 	-webkit-font-smoothing: antialiased;
 	pointer-events: none;
-	
-	@include small-desktop {
+
+  	@include tablet-portrait {
 		left: 50%;
 		top: 300px;
 	}
-	
-	@include tablet {
-		left: 50%;
-		top: 300px;
-	}
-	
-	@include mobile {
+	@include mobile-portrait {
 		left: 50%;
 		top: 200px;
 		width: 90%;
 		font-size: 2.8em;
+	}
+
+	@include mobile-landscape {
+		left: 33.33%;
+		top: 120px;
+		transform: translate(-50%, 0);
+		font-size: 3.0em;
+
 	}
 }
 
@@ -514,10 +500,10 @@ div {
 	width: 159px;
 	height: 31px;
 	left: 370px;
-	left: 34.7%;
+	left: 33.33%;
 	transform: translate(-50%, 0);
-	top: 268px;
-	//top: 56%;
+	//top: 280px;
+	top: 56%;
 	color: #FFF;
 	font-size: 1.6em;
 	font-family: 'uniform_roundedbold';
@@ -526,44 +512,35 @@ div {
 	text-rendering: optimizeLegibility;
 	font-smooth: always;
 	-webkit-font-smoothing: antialiased;
-  
- 	@include small-desktop {
-		top: 260px;
+
+	@include tablet-portrait {
+		top: 356px;
 		left: 50%;
 	}
-	
-	@include tablet {
-		top: 260px;
+
+	@include mobile-portrait {
+		top: 220px;
 		left: 50%;
 	}
-	
-	@include mobile {
-		top: 160px;
-		left: 50%;
+
+	@include mobile-landscape {
+		top: 180px;
 	}
-	
+
 }
 
 #endCta1 {
-	width: 288px;
-	height: 78px;
-	left: 144px;
-	top: 324px;
-	
-	@include small-desktop {
-		transform: translate(-110%, 0);
+  //left: 128px;
+  left: 33.33%;
+  transform: translate(-110%, 0);
+  top: 70%;
+
+  	@include tablet-portrait {
 	  	top: 430px;
 		left: 50%;
 	}
-	
-	@include tablet {
-		transform: translate(-110%, 0);
-	  	top: 430px;
-		left: 50%;
-	}
-	
-	@include mobile {
-		transform: translate(-110%, 0);
+
+	@include mobile-portrait {
 	  	top: 280px;
 		left: 50%;
 		width: 154px;
@@ -572,29 +549,30 @@ div {
 			font-size: 1.0em;
 	  	}
 	}
-	
+
+	@include mobile-landscape {
+	  	top: 210px;
+		width: 154px;
+
+		& p {
+			font-size: 1.0em;
+	  	}
+	}
+
 }
 
 #endCta2 {
-	width: 288px;
-	height: 78px;
-	left: 458px;
-	top: 324px;
-	
-	@include small-desktop {
-		transform: translate(10%, 0);
+  //left: 440px;
+  left: 33.33%;
+  transform: translate(10%, 0);
+  top: 70%;
+
+  	@include tablet-portrait {
 	  	top: 430px;
 		left: 50%;
 	}
-	
-	@include tablet {
-		transform: translate(10%, 0);
-	  	top: 430px;
-		left: 50%;
-	}
-	
-	@include mobile {
-		transform: translate(10%, 0);
+
+	@include mobile-portrait {
 	  	top: 280px;
 		left: 50%;
 		width: 154px;
@@ -604,7 +582,16 @@ div {
 	  	}
 
 	}
-	
+
+	@include mobile-landscape {
+	  	top: 210px;
+		width: 154px;
+
+		& p {
+			font-size: 1.0em;
+	  	}
+	}
+
 }
 
 
@@ -614,10 +601,12 @@ div {
 
 === === === === === === === */
 
-#gameInner {
-	top: 64px;
-	right: 20px;
+#gameHolder {
+	top: 50%;
+	left: 73%;
+	transform: translate(-50%, -50%);
 	width: 710px;
+	//width: 568px;
 	height: 362px;
 	//background-color: #0e00ff;
 	display: flex;
@@ -626,20 +615,14 @@ div {
 	justify-content: space-between;
 	align-content: space-between;
 	//perspective: 100px;
-	
-	@include small-desktop {
+
+	@include tablet-portrait {
 		top: 160px;
 		left: 50%;
 		transform: translate(-50%, 0);
 	}
-	
-	@include tablet {
-		top: 160px;
-		left: 50%;
-		transform: translate(-50%, 0);
-	}
-	
-	@include mobile {
+
+	@include mobile-portrait {
 		top: 70px;
 		left: 50%;
 		width: 96%;
@@ -648,53 +631,78 @@ div {
 		justify-content: space-around;
 		align-content: flex-start;
 	}
-	
+
+	@include tablet-landscape {
+		width: 48%;
+		height: 280px;
+		//height: 10%;
+		align-content: center;
+		//justify-content: space-between;
+		align-items: center;
+		//background-color: aqua;
+	}
+
+	@include mobile-landscape {
+		width: 40%;
+		height: 64%;
+		//background-color: aqua;
+		left: 76%;
+	}
+
 
 }
 
 .cardHolder {
 	position: relative;
 	width: 132px;
+	//width: 19%;
 	height: 176px;
+	//height: 50%;
 	//background-color: #ff0505;
 	perspective: 700px;
 	cursor: pointer;
-	
-	@include mobile {
+
+	@include mobile-portrait {
 		width: 90px;
 		width: 22%;
 		height: 120px;
 	}
+
+	@include tablet-landscape {
+		width: 18%;
+		height: 48%;
+		//align-self: flex-start;
+	}
+
+	@include mobile-landscape {
+		width: 22%;
+	}
+
 }
 
 .cardFront {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-image: url(../card_bg.png);
+	background-image: url(card_bg.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
-	//perspective: 1000px;
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 	transform: rotateY(0deg);
-	
 }
 
 .cardBack {
 	position: absolute;
-	width: 132px;
-	height: 176px;
-	background-color: #ff00ff;
+	width: 100%;
+	height: 100%;
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
-	//perspective: 1000px;
 	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 	transform: rotateY(180deg);
-	font-size: 2em;
-	font-family: monospace;
-	color: #FFF;
 }
 
 .cardBack img {
