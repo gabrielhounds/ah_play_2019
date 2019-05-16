@@ -119,7 +119,7 @@ function init() {
   	//$('#cta_findAPack').css({ width : '100%', height : '100%', top : 0, left : 0  }).appendTo(endCta2);
   
   
-  	//var rotateOverlay = $('<div>', {id:'rotateOverlay'}).css({ width : '100%', height : '100%', 'background-color' : '#00adff', 'background-image' : 'url(rotate_img.png)', 'background-size' : 'cover', 'background-position' : 'center center' ,'z-index' : 9999}).appendTo('body');
+  	var rotateOverlay = $('<div>', {id:'rotateOverlay'}).css({ width : '100%', height : '100%', 'background-color' : '#00adff', 'background-image' : 'url(rotate_img.png)', 'background-size' : 'cover', 'background-position' : 'center center' ,'z-index' : 200}).appendTo('body');
   
   	//var rotateAlert = $('<div id="rotateAlert">Please rotate your device.</div>').css({   }).appendTo(rotateOverlay);
   
@@ -131,7 +131,7 @@ function init() {
   
   	var c1, c2;
   
-  	var mq  = window.matchMedia( '( orientation : portrait )  and ( max-device-width : 414px )' );
+  	var mq  = window.matchMedia( '( orientation : portrait )  and ( max-device-width : 767px )' );
 	var mql = window.matchMedia( '( min-device-width : 414px ) and ( max-device-width : 896px ) and ( orientation : landscape )' );
   
   	var cardFace1;
@@ -140,7 +140,7 @@ function init() {
   	var playCount = 0;
   
   	
-	if( mq.matches || mql.matches ) {
+	if( mq.matches ) {
 		c1 = 4;
 		c2 = 8;
       	//cardFace1 = ['<img src="img00.jpg" >', '<img src="img01.jpg" >', '<img src="img02.jpg" >', '<img src="img03.jpg" >'];
@@ -171,7 +171,7 @@ function init() {
   	
 
   	//TIMER STUFF
-  	var time = 3;
+  	var time = 30;
 	var circTime = 0;
 	var circRatio = 100 / time;
 	var count, circ, timerInit, activeCard;
@@ -228,12 +228,12 @@ function init() {
     }
 
   	$(cta).mouseover(function(){
-		//t.to(cta, 0.2, {scale:1.1, ease:Power2.easeOut});
-      	//t.to($('#cta p'), 0.2, {y:'-20%', opacity:0, ease:Power3.easeOut});
-      	//t.set($('#cta p'), {y:'-100%', delay:0.2});
-      	//t.to($('#cta p'), 0.2, {y:'-50%', opacity:1, ease:Power3.easeOut, delay:0.21});
+		t.to(cta, 0.2, {scale:1.1, ease:Power2.easeOut});
+      	t.to($('#cta p'), 0.2, {y:'-20%', opacity:0, ease:Power3.easeOut});
+      	t.set($('#cta p'), {y:'-100%', delay:0.2});
+      	t.to($('#cta p'), 0.2, {y:'-50%', opacity:1, ease:Power3.easeOut, delay:0.21});
 	}).mouseout(function(){
-		//t.to(cta, 0.6, {scale:1.0, ease:Elastic.easeOut});
+		t.to(cta, 0.6, {scale:1.0, ease:Elastic.easeOut});
 	}).click(function(e) {
 		handleGameInit();
   	});
@@ -358,7 +358,7 @@ function init() {
 	}
 
 	function handleReset() {
-      	if( mq.matches || mql.matches ) {
+      	if( mq.matches ) {
           if (playCount === 0) {
         	for (var i = 0; i < c2; i++) {
             	if ( cardFace0[i] ===  '<img src="img00.jpg" >') {
@@ -551,8 +551,53 @@ function init() {
 	.from(logo, 0.6, {scale:0, opacity:0, ease:Elastic.easeOut}, '-=0.25')
 	.from(cta, 0.6, {scale:0, opacity:0, ease:Elastic.easeOut}, '-=0.5')
 	.add('end');
+	
+	var rotateElements = $( "div[id*='rotate']" );
+	
+	TweenMax.set(rotateElements, {autoAlpha:0});
+	
+	function isTouchDevice() {
+		return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+	};
   
+	log( isTouchDevice() )
   
+	var rotateYourDevice = (function(){
+		
+		//console.log(Object.values(rotateElements));
+	
+      function rotate(){
+          //console.log(isMobile);
+          if (isTouchDevice() === true ) {
+          if (Math.abs(window.orientation) === 90) {
+              //console.log('MOBILE LANDSCAPE');
+              //alert('MOBILE');
+              //alert('Landscape');
+              //$(rotateElements).css( { display : 'block' } );
+              TweenMax.set(rotateElements, {autoAlpha:1});
+          } else {
+              //console.log('NOT MOBILE  or  MOBILE in PORTRAIT');
+              //alert('portrait');
+              //$(rotateElements).css( { display : 'none' } );
+              TweenMax.set(rotateElements, {autoAlpha:0});
+              //$(pack).removeAttr('style');
+        	  //$(logo).removeAttr('style');
+ 			  //$(cta).removeAttr('style');
+              //$('.cardHolder').removeAttr('style');
+          }
+      }
+      }
+      //window.onorientationchange = rotate;
+      window.addEventListener('orientationchange', function() {
+          rotate();
+          
+      });
+      return {
+          rotate : rotate
+      }
+	})();
+	
+	rotateYourDevice.rotate();
 
     
 

@@ -144,6 +144,7 @@ function init() {
 	
 	$('#ga_arrow').click(function(){
 		t.to(window, 0.5, {scrollTo:gu_top - headerOffset, ease:Power2.easeOut});
+		
 	});
 	
 	function reset() {
