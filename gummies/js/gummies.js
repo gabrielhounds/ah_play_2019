@@ -370,7 +370,7 @@ function init() {
           
          if (playCount === 1) {
            for (var i = 0; i < c2; i++) {
-              	if ( cardFace0[i] = '<img src="img04.jpg" >') {
+              	if ( cardFace0[i] === '<img src="img04.jpg" >') {
                 	cardFace0[i] = '<img src="img00.jpg" >'
               	}
            }
@@ -442,7 +442,7 @@ function init() {
 	function handleReplay() {
 		log('REPLAY');
 
-      	ad.customEvent('GAME REPLAYED', true);
+      	//ad.customEvent('GAME REPLAYED', true);
 
 		endOutTl.add('begin')
         .to(endCta1, 0.3, 			{opacity:0,   scale:0, 			ease:Power2.easeOut})
