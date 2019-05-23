@@ -8,7 +8,7 @@ function setUp() {
         $( deferred.resolve );
     })
 	).done(function(){
-		console.log('SCRIPTS LOADED');
+		//console.log('SCRIPTS LOADED');
 		//place your code here, the scripts are all loaded
 		setTimeout( function() { init(); }, 500);
 	});
@@ -209,7 +209,7 @@ function init() {
 
   	function handleGameInit() {
       
-      	log(cardFace0);
+      	//log(cardFace0);
       
       	//$(gameHolder).off('click');
       	//ad.customEvent('GAME STARTED', true);
@@ -234,9 +234,18 @@ function init() {
       	t.to($('#cta p'), 0.2, {y:'-50%', opacity:1, ease:Power3.easeOut, delay:0.21});
 	}).mouseout(function(){
 		t.to(cta, 0.6, {scale:1.0, ease:Elastic.easeOut});
-	}).click(function(e) {
+	})
+	
+	/*.click(function(e) {
 		handleGameInit();
-  	});
+  	});*/
+  	
+  	
+  	/*$(cta).click(function(){
+	  	handleGameInit();
+  	})*/
+  	
+  	$('#cta').on('click', handleGameInit);
 
   	//$(gameHolder).on('click', handleGameInit);
 
@@ -277,8 +286,24 @@ function init() {
 
 		if (!$(this).hasClass('matched')) {
 			$(this).addClass('matched');
-			t.to($(this).children('.cardFront'), 0.6, { 'transform' :  'rotateY(180deg)', ease:Power2.easeOut});
-			t.to($(this).children('.cardBack'),  0.6, { 'transform' :  'rotateY(0deg)',   ease:Power2.easeOut});
+			
+			if (/Edge/.test(navigator.userAgent)) {
+				t.set($(this).children('.cardFront'), { 'transform' :  'rotateY(180deg)', opacity:0 });
+				t.set($(this).children('.cardBack'),  { 'transform' :  'rotateY(0deg)', opacity:1   });
+			} else {
+				t.to($(this).children('.cardFront'), 0.6, { 'transform' :  'rotateY(180deg)', ease:Power2.easeOut});
+				t.to($(this).children('.cardBack'),  0.6, { 'transform' :  'rotateY(0deg)',   ease:Power2.easeOut});
+			}
+
+			
+			//t.set($(this).children('.cardFront'), { 'transform' :  'rotateY(180deg)', opacity:0 });
+			//t.set($(this).children('.cardBack'),  { 'transform' :  'rotateY(0deg)', opacity:1   });
+			
+			//t.to($(this).children('.cardFront'), 0.6, { rotationY : '180deg', ease:Power2.easeOut});
+			//t.to($(this).children('.cardBack'),  0.6, { rotationY : '0deg', ease:Power2.easeOut});
+			
+			//t.to($(this).children('.cardFront'), 0.6, { 'transform' :  'rotateY(180deg)', opacity:0, ease:Power2.easeOut});
+			//t.to($(this).children('.cardBack'),  0.6, { 'transform' :  'rotateY(0deg)',   opacity:1, ease:Power2.easeOut});
 
 			checkCards( $(this) );
 		}
@@ -322,7 +347,7 @@ function init() {
 				//clickNum = 0;
 
 				if (matched === c1) {
-					log('RESET THE CARDS!');
+					//log('RESET THE CARDS!');
 
 
 				 	setTimeout( function() { handleReset(); }, 1500 );
@@ -344,10 +369,21 @@ function init() {
 				clickedCards[1].removeClass('matched');
 				//clickNum = 0;
 				setTimeout( function() {
-					t.to( clickedCards[0].children('.cardFront'), 0.3, { 'transform' :  'rotateY(0deg)'});
-					t.to( clickedCards[0].children('.cardBack'),  0.3, { 'transform' :  'rotateY(180deg)'});
-					t.to( clickedCards[1].children('.cardFront'), 0.3, { 'transform' :  'rotateY(0deg)'});
-					t.to( clickedCards[1].children('.cardBack'),  0.3, { 'transform' :  'rotateY(180deg)'});
+					
+					if (/Edge/.test(navigator.userAgent)) {
+						t.set( clickedCards[0].children('.cardFront'), { 'transform' :  'rotateY(0deg)', opacity:1});
+						t.set( clickedCards[0].children('.cardBack'),  { 'transform' :  'rotateY(180deg)', opacity:0});
+						t.set( clickedCards[1].children('.cardFront'), { 'transform' :  'rotateY(0deg)', opacity:1});
+						t.set( clickedCards[1].children('.cardBack'),  { 'transform' :  'rotateY(180deg)', opacity:0});
+						
+					} else {
+						t.to( clickedCards[0].children('.cardFront'), 0.3, { 'transform' :  'rotateY(0deg)'});
+						t.to( clickedCards[0].children('.cardBack'),  0.3, { 'transform' :  'rotateY(180deg)'});
+						t.to( clickedCards[1].children('.cardFront'), 0.3, { 'transform' :  'rotateY(0deg)'});
+						t.to( clickedCards[1].children('.cardBack'),  0.3, { 'transform' :  'rotateY(180deg)'});
+					}
+					
+					
 					clickedCards = [];
 					clickedCards.length = 0;
 
@@ -385,9 +421,16 @@ function init() {
 		clickNum = 0;
 
 		clickedCards.length = 0;
+		
+		if (/Edge/.test(navigator.userAgent)) {
+			t.set($('.cardHolder').children('.cardFront'), { 'transform' :  'rotateY(0deg)', opacity : 1  } );
+			t.set($('.cardHolder').children('.cardBack'),  { 'transform' :  'rotateY(180deg)', opacity : 0 } );
+		} else {
+			t.staggerTo($('.cardHolder').children('.cardFront'), 0.6, { 'transform' :  'rotateY(0deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
+			t.staggerTo($('.cardHolder').children('.cardBack'),  0.6, { 'transform' :  'rotateY(180deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
+		}
 
-		t.staggerTo($('.cardHolder').children('.cardFront'), 0.6, { 'transform' :  'rotateY(0deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
-		t.staggerTo($('.cardHolder').children('.cardBack'),  0.6, { 'transform' :  'rotateY(180deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
+		
 
       	setTimeout( function() {
       		$('.cardBack').html('');
@@ -405,7 +448,7 @@ function init() {
 	}
 
 	function handleGameOver() {
-		log('GAME OVER');
+		//log('GAME OVER');
 
       	//ad.customEvent('GAME ENDED', true);
 
@@ -440,7 +483,7 @@ function init() {
 	}
 
 	function handleReplay() {
-		log('REPLAY');
+		//log('REPLAY');
 
       	//ad.customEvent('GAME REPLAYED', true);
 
@@ -486,8 +529,16 @@ function init() {
 
 		$('.cardBack').html('');
 		$('.cardHolder').removeClass('matched');
-		t.staggerTo($('.cardHolder').children('.cardFront'), 0.6, { 'transform' :  'rotateY(0deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
-		t.staggerTo($('.cardHolder').children('.cardBack'),  0.6, { 'transform' :  'rotateY(180deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
+		
+		if (/Edge/.test(navigator.userAgent)) {
+			t.set($('.cardHolder').children('.cardFront'), { 'transform' :  'rotateY(0deg)', opacity : 1  } );
+			t.set($('.cardHolder').children('.cardBack'),  { 'transform' :  'rotateY(180deg)', opacity : 0 } );
+		} else {
+			t.staggerTo($('.cardHolder').children('.cardFront'), 0.6, { 'transform' :  'rotateY(0deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
+			t.staggerTo($('.cardHolder').children('.cardBack'),  0.6, { 'transform' :  'rotateY(180deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
+		}
+		//t.staggerTo($('.cardHolder').children('.cardFront'), 0.6, { 'transform' :  'rotateY(0deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
+		//t.staggerTo($('.cardHolder').children('.cardBack'),  0.6, { 'transform' :  'rotateY(180deg)', ease:Back.easeOut, stagger:{amount:0.4, from:'end'}} );
 
 		for (var i = 0; i < c2; i++) {
 	  		$(cardFace0[i]).appendTo($(backCards[i]));
@@ -516,6 +567,8 @@ function init() {
 	}).mouseout(function(){
 		t.to(endCta2, 0.6, {scale:1.0, ease:Elastic.easeOut});
 	}).click(function(e){
+		
+		window.open("https://airheads.com/product-locator","_self");
       	e.preventDefault();
     });
 
@@ -560,7 +613,7 @@ function init() {
 		return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
 	};
   
-	log( isTouchDevice() )
+	//log( isTouchDevice() )
   
 	var rotateYourDevice = (function(){
 		

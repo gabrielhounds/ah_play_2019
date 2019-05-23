@@ -529,7 +529,7 @@ div {
 }
 
 #subHead {
-  width: 159px;
+  width: 250px;
   height: 31px;
   left: 370px;
   left: 34.7%;
@@ -685,7 +685,6 @@ div {
   position: relative;
   width: 132px;
   height: 176px;
-  perspective: 700px;
   cursor: pointer;
 }
 
@@ -705,8 +704,8 @@ div {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transform: rotateY(0deg);
 }
 
@@ -717,8 +716,8 @@ div {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transform: rotateY(180deg);
   font-size: 2em;
   font-family: monospace;

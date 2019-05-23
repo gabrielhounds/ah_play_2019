@@ -531,7 +531,7 @@ div {
 }
 
 #subHead {
-	width: 159px;
+	width: 250px;
 	height: 31px;
 	left: 370px;
 	left: 34.7%;
@@ -677,7 +677,7 @@ div {
 	width: 132px;
 	height: 176px;
 	//background-color: #ff0505;
-	perspective: 700px;
+	//perspective: 700px;
 	cursor: pointer;
 	
 	@include mobile {
@@ -695,9 +695,9 @@ div {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
-	//perspective: 1000px;
-	backface-visibility: hidden;
+	//perspective: 700px;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	transform: rotateY(0deg);
 	
 }
@@ -710,9 +710,9 @@ div {
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
-	//perspective: 1000px;
-	backface-visibility: hidden;
+	//perspective: 700px;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	transform: rotateY(180deg);
 	font-size: 2em;
 	font-family: monospace;
