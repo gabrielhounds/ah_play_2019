@@ -1,1 +1,22 @@
 main{display:flex;flex-direction:column;top:0;left:0;width:100vw;height:100vh;overflow-x:hidden}@media all and (max-width: 768px){header{display:none}}.test{font-family:'uniform_roundedblack'}
+
+@media (max-width: 767px) {
+
+	#gameContainer {
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+	}
+	
+	#gameHolder {
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+	}
+	
+	#game {
+		overflow: hidden;
+	}
+
+
+}
