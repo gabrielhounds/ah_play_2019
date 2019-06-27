@@ -361,6 +361,23 @@ a {
   background-size: contain;
 }
 
+.game.memory {
+  background-color: #003674;
+}
+
+.game.memory .gameLogo {
+  background-image: url(../images/mem_logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 414px) {
+  .game.memory .gameLogo {
+    background-image: url(../images/mem_logo_m.png);
+  }
+}
+
 .divider {
   position: absolute;
   width: 100%;
@@ -537,7 +554,7 @@ a {
   }
 }
 
-#gum_arrow {
+#mem_arrow {
   opacity: 0;
   visibility: hidden;
 }
@@ -556,6 +573,10 @@ body.ga {
 
 body.gummies {
   background-color: #00B8FE;
+}
+
+body.memory {
+  background-color: #003674;
 }
 
 .gamePage {
@@ -665,6 +686,12 @@ body.gummies {
 
 @media only screen and (max-width: 414px) {
   .gummies .header {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .memory .header {
     display: none;
   }
 }

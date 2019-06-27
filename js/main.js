@@ -20,6 +20,7 @@ function init() {
 	var ga_top = $('#getAirheaded').offset().top;
 	var fa_top = $('#floatAway').offset().top;
 	var gu_top = $('#gummies').offset().top;
+	var me_top = $('#memory').offset().top;
 	
 	var headerOffset = $('#header').height();
 	//log('FA TOP = ',  fa_top - headerOffset );
@@ -27,9 +28,13 @@ function init() {
 	var cabArrowBounce = TweenMax.to( $('#cab_arrow'), 0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true } );
 	var faArrowBounce  = TweenMax.to( $('#fa_arrow'),  0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true, paused:true} );
 	var gaArrowBounce  = TweenMax.to( $('#ga_arrow'),  0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true, paused:true} );
+	var guArrowBounce  = TweenMax.to( $('#gum_arrow'), 0.6, { y:6, ease:Back.easeOut, repeat:-1, yoyo:true, paused:true} );
+
 	
 	t.set($('#fa_arrow'), {opacity:0});
 	t.set($('#ga_arrow'), {opacity:0});
+	t.set($('#ga_arrow'), {opacity:0});
+	t.set($('#gum_arrow'), {opacity:0});
 	
 	$(hamburger).click(function(){
 		if( $('.header').hasClass('open') ) {
@@ -101,7 +106,7 @@ function init() {
 		if(window.scrollY < fa_top - headerOffset) {
 			t.to($('#fa_arrow'), 0.2, {opacity:0});
 			t.to($('#ga_arrow'), 0.2, {opacity:0});
-			
+			t.to($('#gum_arrow'), 0.2, {opacity:0});
 			t.to($('#cab_arrow'), 0.2, {opacity:1});
 			
 			cabArrowBounce.play();
@@ -110,10 +115,10 @@ function init() {
 		}
 		
 		if(window.scrollY >= fa_top - headerOffset) {
-			t.to($('#fa_arrow'), 0.2, {opacity:1});
-			
+			t.to($('#fa_arrow'), 0.2, {opacity:1});		
 			t.to($('#ga_arrow'), 0.2, {opacity:0});
 			t.to($('#cab_arrow'), 0.2, {opacity:0});
+			t.to($('#gum_arrow'), 0.2, {opacity:0});
 			
 			faArrowBounce.play();
 			cabArrowBounce.pause();
@@ -123,13 +128,23 @@ function init() {
 		if(window.scrollY >= ga_top - headerOffset) {
 			t.to($('#fa_arrow'), 0.2, {opacity:0});
 			t.to($('#cab_arrow'), 0.2, {opacity:0});
-			
+			t.to($('#gum_arrow'), 0.2, {opacity:0});			
 			t.to($('#ga_arrow'), 0.2, {opacity:1});
 			
 			gaArrowBounce.play();
-			
 			faArrowBounce.pause();
 			faArrowBounce.seek(0);
+		}
+		
+		if(window.scrollY >= gu_top - headerOffset) {
+			t.to($('#fa_arrow'), 0.2, {opacity:0});
+			t.to($('#cab_arrow'), 0.2, {opacity:0});			
+			t.to($('#ga_arrow'), 0.2, {opacity:0});
+			t.to($('#gum_arrow'), 0.2, {opacity:1});
+			
+			guArrowBounce.play();
+			gaArrowBounce.pause();
+			gaArrowBounce.seek(0);
 		}
 		
 	});
@@ -144,7 +159,10 @@ function init() {
 	
 	$('#ga_arrow').click(function(){
 		t.to(window, 0.5, {scrollTo:gu_top - headerOffset, ease:Power2.easeOut});
-		
+	});
+	
+	$('#gum_arrow').click(function(){
+		t.to(window, 0.5, {scrollTo:me_top - headerOffset, ease:Power2.easeOut});
 	});
 	
 	function reset() {

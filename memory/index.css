@@ -1,0 +1,582 @@
+@font-face {
+  font-family: 'uniform_roundedultra';
+  src: url("miller_type_foundry_-_uniform_rounded_ultra-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'uniform_roundedblack';
+  src: url("miller_type_foundry_-_uniform_rounded_black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'uniform_roundedbold';
+  src: url("miller_type_foundry_-_uniform_rounded_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  position: absolute;
+}
+
+@media only screen and (max-width: 1024px) {
+  .instructions {
+    display: none;
+  }
+}
+
+#main {
+  top: 0;
+  width: 1280px;
+  height: 500px;
+  background-image: url(blue_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 1024px) {
+  #main {
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  #main {
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .memory #gameContainer {
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .memory .gameHolder {
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .memory .gamePage {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    min-height: auto;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .gameHolder {
+    width: 100%;
+  }
+  #gameContainer {
+    width: 100%;
+    height: 100%;
+  }
+  #main {
+    width: 100%;
+  }
+}
+
+#left {
+  width: 37.5%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /*background-color: #00c1ff;*/
+}
+
+#ah_logo {
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -100%);
+  width: 300px;
+  height: 226px;
+  width: 55.55556%;
+  height: 28.3208%;
+  background-image: url(ah_logo.png);
+  pointer-events: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cta {
+  width: 254px;
+  height: 76px;
+  background-image: url(cta_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.cta p {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  color: #FFF;
+  font-size: 1.4em;
+  font-family: 'uniform_roundedbold';
+  text-align: center;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+}
+
+#cta {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  z-index: 99;
+}
+
+#instructions {
+  width: 74.07407%;
+  height: 6.26566%;
+  max-width: 400px;
+  max-height: 50px;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  color: #FFF;
+  font-size: 1.5em;
+  font-family: 'uniform_roundedblack';
+  line-height: 1.1;
+  letter-spacing: 0.0em;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+}
+
+#candy {
+  width: 503px;
+  width: 39.296875%;
+  height: 437px;
+  height: 90%;
+  top: 0;
+  left: 0;
+  background-image: url(candy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 10;
+  pointer-events: none;
+}
+
+#pads {
+  width: 800px;
+  width: 62.5%;
+  height: 100%;
+  left: 480px;
+  left: 37.5%;
+  top: 0;
+  /*background-color: #00c0fb;*/
+}
+
+.padBg {
+  width: 200px;
+  width: 25%;
+  height: 100%;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#pad1Bg {
+  left: 0;
+  background-color: #5479f1;
+  background-image: url(pad1.jpg);
+}
+
+#pad2Bg {
+  left: 200px;
+  left: 25%;
+  background-color: #e83c3d;
+  background-image: url(pad2.jpg);
+}
+
+#pad3Bg {
+  left: 400px;
+  left: 50%;
+  background-color: #fe7d81;
+  background-image: url(pad3.jpg);
+}
+
+#pad4Bg {
+  left: 600px;
+  left: 75%;
+  background-color: #4fcd47;
+  background-image: url(pad4.jpg);
+}
+
+.pad {
+  width: 200px;
+  width: 25%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  background-image: url(pad_overlay_dark.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+#pad1 {
+  left: 0;
+}
+
+#pad2 {
+  left: 200px;
+  left: 25%;
+}
+
+#pad3 {
+  left: 400px;
+  left: 50%;
+}
+
+#pad4 {
+  left: 600px;
+  left: 75%;
+}
+
+#alertText {
+  width: 65%;
+  height: 30%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #FFF;
+  font-size: 2.5em;
+  font-family: 'uniform_roundedblack';
+  letter-spacing: 0.0em;
+  user-select: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  filter: drop-shadow(0 20px 20px rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  pointer-events: none;
+  background-image: url(alert_ready.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+#logo {
+  width: 718px;
+  height: 167px;
+  top: 190px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(intro_memory_logo.png);
+  background-size: 100% 100%;
+  pointer-events: none;
+}
+
+/*
+	========
+	ENDFRAME
+	========
+*/
+#endFrame {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(endframe_bg.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 999;
+}
+
+#endFrame_logo {
+  top: 10%;
+  left: 33.33%;
+  transform: translate(-50%);
+  width: 40%;
+  height: 20%;
+  background-image: url(end_memory_logo.png);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+#ahLogo_endFrame {
+  top: 50%;
+  right: 32px;
+  transform: translate(0, -50%);
+  width: 372px;
+  height: 368px;
+  background-image: url(ah_endframe_logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+#scoreText {
+  top: 40%;
+  left: 33.33%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 80px;
+  text-align: center;
+  color: #FFF;
+  font-size: 4.6em;
+  font-family: 'uniform_roundedultra';
+  user-select: none;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  pointer-events: none;
+}
+
+#subHead {
+  width: 159px;
+  height: 31px;
+  left: 370px;
+  left: 33.33%;
+  transform: translate(-50%, 0);
+  top: 56%;
+  background-image: url(subhead.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+#endCta1 {
+  left: 33.33%;
+  transform: translate(-110%, 0);
+  top: 70%;
+}
+
+#endCta2 {
+  left: 33.33%;
+  transform: translate(10%, 0);
+  top: 70%;
+}
+
+@media all and (orientation: portrait) {
+  #pads {
+    width: 100%;
+    height: 43.52332%;
+    left: 0;
+    top: 0;
+  }
+  #left {
+    width: 100%;
+    height: 53.36788%;
+    top: 46.63212%;
+    left: 0;
+  }
+  #ah_logo {
+    top: 0.97087%;
+    left: 52%;
+    width: 56.25%;
+    height: 33.33333%;
+    transform: translate(-50%, 0);
+  }
+  #logo {
+    width: 73.75691%;
+    height: 167px;
+    top: 190px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url(intro_memory_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    pointer-events: none;
+  }
+  #instructions {
+    font-size: 1.5em;
+    bottom: 28%;
+    width: 90%;
+    max-width: 90%;
+  }
+  #candy {
+    width: 104%;
+    height: 60%;
+    top: 40%;
+    left: 0;
+    background-image: url(candy_p.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    pointer-events: none;
+  }
+  #cta {
+    width: 79.375%;
+    height: 14.58333%;
+    top: auto;
+    bottom: 43.75%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 99;
+  }
+  #cta p {
+    line-height: 2.5;
+    font-size: 1.4em;
+  }
+  #endFrame {
+    background-image: url(endframe_bg_p.jpg);
+  }
+  #endFrame_logo {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 75%;
+    height: 20%;
+  }
+  #ahLogo_endFrame {
+    top: 69.43005%;
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 40%;
+    height: 30%;
+    background-image: url(ah_endframe_logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    pointer-events: none;
+  }
+  #scoreText {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 80px;
+    font-size: 4.6em;
+  }
+  #subHead {
+    width: 159px;
+    height: 31px;
+    left: 50%;
+    top: 46.5%;
+    transform: translate(-50%, -50%);
+  }
+  #endCta1 {
+    width: 40.625%;
+    left: 6%;
+    left: 50%;
+    top: 55%;
+    transform: translate(-105%, 0);
+  }
+  #endCta2 {
+    width: 40.625%;
+    left: auto;
+    left: 50%;
+    top: 55%;
+    transform: translate(5%, 0);
+  }
+}
+
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .cta p {
+    font-size: 1.3em;
+  }
+  #cta p {
+    font-size: 1.3em;
+  }
+  #logo {
+    width: 90%;
+  }
+  #ahLogo_endFrame {
+    width: 30%;
+  }
+  #endCta1 {
+    left: 33.33%;
+    transform: translate(-100%, 0);
+    top: 70%;
+  }
+  #endCta2 {
+    left: 33.33%;
+    transform: translate(0, 0);
+    top: 70%;
+  }
+  #alertText {
+    width: 75%;
+    height: 35%;
+  }
+}
+
+@media all and (max-device-width: 414px) {
+  #pads {
+    height: 41.45078%;
+  }
+  .cta p {
+    font-size: 1.0em;
+  }
+  #cta p {
+    font-size: 1.2em;
+  }
+  #scoreText {
+    font-size: 3.0em;
+  }
+  #alertText {
+    width: 80%;
+    height: 30%;
+  }
+  #logo {
+    width: 90%;
+  }
+  #instructions {
+    font-size: 1.0em;
+  }
+}
+
+@media all and (max-device-width: 414px) and (orientation: landscape) {
+  #instructions {
+    font-size: 1.2em;
+  }
+  #endCta1 {
+    left: 33.33%;
+    transform: translate(-80%, 0);
+    top: 70%;
+  }
+  #endCta2 {
+    left: 33.33%;
+    transform: translate(-20%, 0);
+    top: 70%;
+  }
+  #ahLogo_endFrame {
+    width: 30%;
+  }
+}

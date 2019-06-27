@@ -422,6 +422,22 @@ body {
 		}
 		
 	}
+	
+	&.memory {
+		background-color: $darkBlue;
+		
+		.gameLogo {
+			background-image: url(../images/mem_logo.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+			
+			@include mobile {
+				background-image: url(../images/mem_logo_m.png);
+			}
+		}
+		
+	}
 
 }
 
@@ -595,6 +611,11 @@ body {
 }
 
 #gum_arrow {
+	//opacity: 0;
+	//visibility: hidden;
+}
+
+#mem_arrow {
 	opacity: 0;
 	visibility: hidden;
 }
@@ -615,6 +636,10 @@ body.gummies {
 	background-color: $lightBlue;
 }
 
+body.memory {
+	background-color: $darkBlue;
+}
+
 .gamePage {
 	position: absolute;
 	top: 0;
@@ -631,6 +656,8 @@ body.gummies {
 	flex-direction: column;
 	align-content: space-around;
 	align-items: center;
+	
+	
 
 
 }
@@ -685,6 +712,8 @@ body.gummies {
 	//margin-left: auto;
 	//margin-right: auto;
 	margin-bottom: 60px;
+	
+	//background-color: aqua;
 
 	.gameContainer {
 		width: 100%;
@@ -732,7 +761,11 @@ body.gummies {
 	}
 }
 
-
+.memory .header {
+	@include mobile {
+		display: none;
+	}
+}
 
 
 
